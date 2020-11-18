@@ -1,0 +1,46 @@
+@page "/todopage"
+
+@using CoolHub.ViewModels
+@using System.ComponentModel
+@using CoolHub.Components
+
+@implements IDisposable
+@inject IToDoViewModel ViewModel
+
+@* Add the viewmodel as a cascading value, so that all the children of the 
+ToDoPage component have a reference to the viewmodel*@
+
+<CascadingValue Value=@ViewModel Name="ViewModel">
+    <ToDoListComponent />
+    <ToDoFormComponent />
+</CascadingValue>
+
+<h1>Items to do: @ViewModel.ItemsToDo</h1>
+
+@code 
+{
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        ViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
+}
