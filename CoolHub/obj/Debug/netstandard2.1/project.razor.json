@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\CoolHub.csproj",
+  "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\CoolHub.csproj",
   "Configuration": {
     "ConfigurationName": "Default",
     "LanguageVersion": "3.0",
@@ -11934,63 +11934,63 @@
   "RootNamespace": "CoolHub",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Pages\\ToDoPage.razor",
-      "TargetPath": "Pages\\ToDoPage.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Pages\\Categories.razor",
-      "TargetPath": "Pages\\Categories.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Components\\Test Components\\ToDoFormComponent.razor",
-      "TargetPath": "Components\\Test Components\\ToDoFormComponent.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Components\\Test Components\\ToDoListComponent.razor",
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Components\\Test Components\\ToDoListComponent.razor",
       "TargetPath": "Components\\Test Components\\ToDoListComponent.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Pages\\FetchData.razor",
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\FetchData.razor",
       "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Pages\\Counter.razor",
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\Counter.razor",
       "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Api\\Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\ToDoPage.razor",
+      "TargetPath": "Pages\\ToDoPage.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\Categories.razor",
+      "TargetPath": "Pages\\Categories.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Components\\Test Components\\ToDoFormComponent.razor",
+      "TargetPath": "Components\\Test Components\\ToDoFormComponent.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
       "FileKind": "component"
     }
   ],
