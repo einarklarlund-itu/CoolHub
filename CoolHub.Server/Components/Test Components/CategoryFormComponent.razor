@@ -1,0 +1,38 @@
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using CoolHub.Entities;
+
+@namespace CoolHub
+
+<hr />
+
+<EditForm Model="@CategoriesViewModel.Category" OnValidSubmit="@CreateCategory">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <InputText class="form-control" id="name" @bind-Value=@CategoriesViewModel.Category.Name />
+        </div>
+        <div class="form-group">
+            <label for="notes">Description</label>
+            <InputTextArea class="form-control" id="notes" @bind-Value=@CategoriesViewModel.Category.Description />
+        </div>
+        <button type="submit" class="btn btn-primary" disabled="@CategoriesViewModel.IsBusy">Save</button>
+    </div>
+</EditForm>
+
+
+@code {
+    [CascadingParameter(Name = "CategoriesViewModel")]
+    ICategoriesViewModel CategoriesViewModel { get; set; }
+    void CreateCategory()
+    {
+        CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+        {
+            Name = CategoriesViewModel.Category.Name,
+            Description = CategoriesViewModel.Category.Description
+        });
+
+        CategoriesViewModel.Category = new Category();
+    }
+
+}

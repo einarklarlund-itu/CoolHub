@@ -8,134 +8,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1057723612,
+        "HashCode": 420159298,
         "Kind": "Components.Component",
-        "Name": "CoolHub.App",
+        "Name": "CoolHub.Pages.FetchData",
         "AssemblyName": "CoolHub",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.App"
+          "Common.TypeName": "CoolHub.Pages.FetchData"
         }
       },
       {
-        "HashCode": -96408554,
+        "HashCode": 530127012,
         "Kind": "Components.Component",
-        "Name": "CoolHub.App",
+        "Name": "CoolHub.Pages.FetchData",
         "AssemblyName": "CoolHub",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "CoolHub.App"
+            "TagName": "CoolHub.Pages.FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1083721333,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Components.Test_Components.ToDoFormComponent",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ToDoFormComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Components.Test_Components.ToDoFormComponent"
-        }
-      },
-      {
-        "HashCode": 59143410,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Components.Test_Components.ToDoFormComponent",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.Components.Test_Components.ToDoFormComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Components.Test_Components.ToDoFormComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 358489795,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Components.Test_Components.ToDoListComponent",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ToDoListComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Components.Test_Components.ToDoListComponent"
-        }
-      },
-      {
-        "HashCode": 559886161,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Components.Test_Components.ToDoListComponent",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.Components.Test_Components.ToDoListComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Components.Test_Components.ToDoListComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1433696614,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.Categories",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Categories"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.Categories"
-        }
-      },
-      {
-        "HashCode": -1567611107,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.Categories",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.Pages.Categories"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.Categories",
+          "Common.TypeName": "CoolHub.Pages.FetchData",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -193,39 +94,6 @@
         }
       },
       {
-        "HashCode": 420159298,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.FetchData",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": 530127012,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.FetchData",
-        "AssemblyName": "CoolHub",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 1310911661,
         "Kind": "Components.Component",
         "Name": "CoolHub.Pages.Index",
@@ -259,9 +127,9 @@
         }
       },
       {
-        "HashCode": -858033394,
+        "HashCode": -968937504,
         "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.ToDoPage",
+        "Name": "CoolHub.ToDoPage",
         "AssemblyName": "CoolHub",
         "CaseSensitive": true,
         "TagMatchingRules": [
@@ -271,23 +139,188 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.ToDoPage"
+          "Common.TypeName": "CoolHub.ToDoPage"
         }
       },
       {
-        "HashCode": 1194195198,
+        "HashCode": 2017321672,
         "Kind": "Components.Component",
-        "Name": "CoolHub.Pages.ToDoPage",
+        "Name": "CoolHub.ToDoPage",
         "AssemblyName": "CoolHub",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "CoolHub.Pages.ToDoPage"
+            "TagName": "CoolHub.ToDoPage"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.Pages.ToDoPage",
+          "Common.TypeName": "CoolHub.ToDoPage",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1983911648,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.ToDoListComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ToDoListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.ToDoListComponent"
+        }
+      },
+      {
+        "HashCode": -2062044348,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.ToDoListComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.ToDoListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.ToDoListComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 653649949,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.ToDoFormComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ToDoFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.ToDoFormComponent"
+        }
+      },
+      {
+        "HashCode": 1156838176,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.ToDoFormComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.ToDoFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.ToDoFormComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -61464001,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryListComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CategoryListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryListComponent"
+        }
+      },
+      {
+        "HashCode": 1063244401,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryListComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.CategoryListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryListComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1440346957,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryFormComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CategoryFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryFormComponent"
+        }
+      },
+      {
+        "HashCode": -417549716,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryFormComponent",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.CategoryFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryFormComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -295218096,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.Categories",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Categories"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.Categories"
+        }
+      },
+      {
+        "HashCode": 2142934838,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.Categories",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.Categories"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.Categories",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -470,6 +503,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "CoolHub.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1057723612,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.App",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.App"
+        }
+      },
+      {
+        "HashCode": -96408554,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.App",
+        "AssemblyName": "CoolHub",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -11969,6 +12035,11 @@
       "FileKind": "componentImport"
     },
     {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Components\\Test Components\\CategoryFormComponent.razor",
+      "TargetPath": "Components\\Test Components\\CategoryFormComponent.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Pages\\Categories.razor",
       "TargetPath": "Pages\\Categories.razor",
       "FileKind": "component"
@@ -11981,6 +12052,11 @@
     {
       "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub\\Components\\Test Components\\CategoryListComponent.razor",
+      "TargetPath": "Components\\Test Components\\CategoryListComponent.razor",
       "FileKind": "component"
     },
     {
