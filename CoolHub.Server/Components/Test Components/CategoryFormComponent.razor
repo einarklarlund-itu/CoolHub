@@ -1,38 +1,48 @@
 @using CoolHub.ViewModels
 @using CoolHub.Models
-@using CoolHub.Entities;
+@using CoolHub.Entities
+@using System.Diagnostics
 
 @namespace CoolHub
 
 <hr />
 
-<EditForm Model="@CategoriesViewModel.Category" OnValidSubmit="@CreateCategory">
+<EditForm Model="@Category" OnValidSubmit="@HandleCategoryCreated">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
     <div class="col-4">
         <div class="form-group">
             <label for="name">Name</label>
-            <InputText class="form-control" id="name" @bind-Value=@CategoriesViewModel.Category.Name />
+            <InputText class="form-control" id="name" @bind-Value=@Category.Name />
         </div>
         <div class="form-group">
             <label for="notes">Description</label>
-            <InputTextArea class="form-control" id="notes" @bind-Value=@CategoriesViewModel.Category.Description />
+            <InputTextArea class="form-control" id="notes" @bind-Value=@Category.Description />
         </div>
         <button type="submit" class="btn btn-primary" disabled="@CategoriesViewModel.IsBusy">Save</button>
     </div>
+
 </EditForm>
 
 
 @code {
     [CascadingParameter(Name = "CategoriesViewModel")]
-    ICategoriesViewModel CategoriesViewModel { get; set; }
-    void CreateCategory()
+    CategoriesViewModel CategoriesViewModel { get; set; }
+    private CategoryCreateDTO Category = new CategoryCreateDTO();
+
+    private async void HandleCategoryCreated()
     {
-        CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+
+        Debug.WriteLine("CreateCategory called in CategoriesFormComponent");
+
+        await CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
         {
-            Name = CategoriesViewModel.Category.Name,
-            Description = CategoriesViewModel.Category.Description
+            Name = Category.Name,
+            Description = Category.Description
         });
 
-        CategoriesViewModel.Category = new Category();
+        Category = new CategoryCreateDTO();
     }
 
 }

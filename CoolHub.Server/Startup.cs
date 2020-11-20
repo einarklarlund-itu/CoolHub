@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+// using Microsoft.EntityFrameworkCore;
 using CoolHub.Server.Data;
 using CoolHub.Entities;
 using CoolHub.Models;
@@ -34,7 +35,8 @@ namespace CoolHub.Server
             services.AddSingleton<WeatherForecastService>();
                         
             services.AddScoped<IToDoViewModel, ToDoFinalViewModel>();
-            services.AddScoped<ICategoriesViewModel, CategoriesViewModel>();
+            services.AddScoped<CategoriesViewModel>();
+            // services.AddScoped<ICategoriesViewModel, CategoriesViewModel>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             

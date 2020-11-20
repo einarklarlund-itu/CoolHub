@@ -143,7 +143,7 @@ using Microsoft.Extensions.Configuration;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoriesViewModel CategoriesViewModel { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private CategoriesViewModel CategoriesViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

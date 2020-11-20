@@ -89,7 +89,21 @@ using CoolHub.ViewModels;
 #line default
 #line hidden
 #nullable disable
-    public partial class CategoryListComponent : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
+using CoolHub.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
+using System.ComponentModel;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class CategoryListComponent : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,10 +111,30 @@ using CoolHub.ViewModels;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 30 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
        
     [CascadingParameter(Name = "CategoriesViewModel")]
-    ICategoriesViewModel CategoriesViewModel { get; set; }
+    CategoriesViewModel CategoriesViewModel { get; set; }
+
+    List<CategoryDetailsDTO> details = new List<CategoryDetailsDTO>();
+
+    protected async override Task OnInitializedAsync()
+    {
+        await SetDetails();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await SetDetails();
+    }
+
+    async Task SetDetails() =>
+        details = await CategoriesViewModel.GetCategoryDetails();
+
+    public void Dispose()
+    {
+        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
 
 #line default
 #line hidden

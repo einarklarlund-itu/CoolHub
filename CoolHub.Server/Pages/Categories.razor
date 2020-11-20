@@ -6,7 +6,7 @@
 @using System.ComponentModel
 @using Microsoft.Extensions.Configuration
 
-@inject ICategoriesViewModel CategoriesViewModel
+@inject CategoriesViewModel CategoriesViewModel
 @inject IConfiguration Configuration
 @implements IDisposable
 
@@ -18,7 +18,7 @@ ToDoPage component have a reference to the viewmodel*@
     <CategoryFormComponent />
 </CascadingValue>
 
-<h1>Number of categories: @CategoriesViewModel.Categories.Count</h1>
+@* <h1>Number of categories: @CategoriesViewModel.NumberOfCategories()</h1> *@
 
 @code 
 {

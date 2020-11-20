@@ -326,72 +326,6 @@
         }
       },
       {
-        "HashCode": 1514065976,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.CategoryFormComponent",
-        "AssemblyName": "CoolHub.Server",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CategoryFormComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.CategoryFormComponent"
-        }
-      },
-      {
-        "HashCode": -253055103,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.CategoryFormComponent",
-        "AssemblyName": "CoolHub.Server",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.CategoryFormComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.CategoryFormComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1464006573,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.CategoryListComponent",
-        "AssemblyName": "CoolHub.Server",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CategoryListComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.CategoryListComponent"
-        }
-      },
-      {
-        "HashCode": -1648815692,
-        "Kind": "Components.Component",
-        "Name": "CoolHub.CategoryListComponent",
-        "AssemblyName": "CoolHub.Server",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CoolHub.CategoryListComponent"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "CoolHub.CategoryListComponent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1170784792,
         "Kind": "Components.Component",
         "Name": "CoolHub.ToDoFormComponent",
@@ -520,6 +454,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "CoolHub.ToDoPage",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1464006573,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryListComponent",
+        "AssemblyName": "CoolHub.Server",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CategoryListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryListComponent"
+        }
+      },
+      {
+        "HashCode": -1648815692,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryListComponent",
+        "AssemblyName": "CoolHub.Server",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.CategoryListComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryListComponent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1514065976,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryFormComponent",
+        "AssemblyName": "CoolHub.Server",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CategoryFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryFormComponent"
+        }
+      },
+      {
+        "HashCode": -253055103,
+        "Kind": "Components.Component",
+        "Name": "CoolHub.CategoryFormComponent",
+        "AssemblyName": "CoolHub.Server",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CoolHub.CategoryFormComponent"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "CoolHub.CategoryFormComponent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

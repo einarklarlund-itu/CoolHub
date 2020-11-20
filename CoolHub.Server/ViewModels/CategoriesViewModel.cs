@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using CoolHub.Entities;
 using CoolHub.Models;
@@ -17,34 +18,27 @@ namespace CoolHub.ViewModels
             _repository = repository;
         }
 
-        private List<Category> _categories = new List<Category>(); 
-        public List<Category> Categories
+        public int NumberOfCategories()
         {
-            get => _categories; 
-            private set
-            {
-                SetValue(ref _categories, value);
-            }
+            return _repository.NumberOfCategories();
         }
-    
-        private Category _category = new Category(); 
-        public Category Category
+
+        public async Task<List<CategoryDetailsDTO>> GetCategoryDetails()
         {
-            get => _category; 
-            set
-            {
-                SetValue(ref _category, value);
-            }
+            IQueryable<CategoryDetailsDTO> details = await _repository.Read();
+            return await details.ToListAsync();
         }
 
         public async Task<Status> CreateCategory(CategoryCreateDTO category)
         {
+            Debug.WriteLine("CreateCategory called in CategoriesViewModel");
+
             IsBusy = true;
 
             (Status status, int categoryId) response = await _repository.Create(category);
 
-            OnPropertyChanged(nameof(Categories));
-            
+            OnPropertyChanged(nameof(_repository));
+
             IsBusy = false;
 
             return response.status;

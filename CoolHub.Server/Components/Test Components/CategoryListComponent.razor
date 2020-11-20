@@ -1,21 +1,25 @@
 @using CoolHub.ViewModels
+@using CoolHub.Models
+@using System.ComponentModel
 
 @namespace CoolHub
 
-@if (CategoriesViewModel?.Categories == null)
+@implements IDisposable
+
+@if (CategoriesViewModel?.IsBusy == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
     <div class="card-deck" >
-        @foreach (var category in CategoriesViewModel.Categories.OrderBy(c => c.Name).ThenBy(c => c.Description))
+        @foreach (var categoryDetails in (details).OrderBy(c => c.Name).ThenBy(c => c.Description))
         {
             <div class="card mb-3 bg-light" style="min-width: 18rem; max-width: 18rem;">
                 @* <div class="card-header">@(category.Description ?? string.Empty)</div> *@
                 <div class="card-body">
-                    <h5 class="card-title">@category.Name</h5>
-                    <p class="card-text">@category.Description</p>
+                    <h5 class="card-title">@categoryDetails.Name</h5>
+                    <p class="card-text">@categoryDetails.Description</p>
                     @* <button disabled="@ViewModel.IsBusy" class="btn @(category.Done ? "btn-secondary" : "btn-primary")" @onclick="@(() => SetCategory(todoitem))">Edit</button> *@
                 </div>
             </div>
@@ -25,5 +29,25 @@ else
 
 @code {
     [CascadingParameter(Name = "CategoriesViewModel")]
-    ICategoriesViewModel CategoriesViewModel { get; set; }
+    CategoriesViewModel CategoriesViewModel { get; set; }
+
+    List<CategoryDetailsDTO> details = new List<CategoryDetailsDTO>();
+
+    protected async override Task OnInitializedAsync()
+    {
+        await SetDetails();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await SetDetails();
+    }
+
+    async Task SetDetails() =>
+        details = await CategoriesViewModel.GetCategoryDetails();
+
+    public void Dispose()
+    {
+        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
 }

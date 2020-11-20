@@ -103,6 +103,13 @@ using CoolHub.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryFormComponent.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
     public partial class CategoryFormComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -111,19 +118,24 @@ using CoolHub.Entities;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryFormComponent.razor"
+#line 29 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryFormComponent.razor"
        
     [CascadingParameter(Name = "CategoriesViewModel")]
-    ICategoriesViewModel CategoriesViewModel { get; set; }
-    void CreateCategory()
+    CategoriesViewModel CategoriesViewModel { get; set; }
+    private CategoryCreateDTO Category = new CategoryCreateDTO();
+
+    private async void HandleCategoryCreated()
     {
-        CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+
+        Debug.WriteLine("CreateCategory called in CategoriesFormComponent");
+
+        await CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
         {
-            Name = CategoriesViewModel.Category.Name,
-            Description = CategoriesViewModel.Category.Description
+            Name = Category.Name,
+            Description = Category.Description
         });
 
-        CategoriesViewModel.Category = new Category();
+        Category = new CategoryCreateDTO();
     }
 
 
