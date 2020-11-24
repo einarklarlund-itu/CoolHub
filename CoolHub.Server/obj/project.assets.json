@@ -1623,6 +1623,48 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "CoolHub.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0",
+          "System.Data.Sqlite": "1.0.113.6"
+        },
+        "compile": {
+          "bin/placeholder/CoolHub.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoolHub.Entities.dll": {}
+        }
+      },
+      "CoolHub.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CoolHub.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CoolHub.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoolHub.Models.dll": {}
+        }
+      },
+      "CoolHub.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CoolHub.Entities": "1.0.0",
+          "CoolHub.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CoolHub.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoolHub.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -6087,10 +6129,28 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "CoolHub.Entities/1.0.0": {
+      "type": "project",
+      "path": "../CoolHub.Entities/CoolHub.Entities.csproj",
+      "msbuildProject": "../CoolHub.Entities/CoolHub.Entities.csproj"
+    },
+    "CoolHub.Models/1.0.0": {
+      "type": "project",
+      "path": "../CoolHub.Models/CoolHub.Models.csproj",
+      "msbuildProject": "../CoolHub.Models/CoolHub.Models.csproj"
+    },
+    "CoolHub.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../CoolHub.ViewModels/CoolHub.ViewModels.csproj",
+      "msbuildProject": "../CoolHub.ViewModels/CoolHub.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CoolHub.Entities >= 1.0.0",
+      "CoolHub.Models >= 1.0.0",
+      "CoolHub.ViewModels >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
       "System.Data.SQLite >= 1.0.113.6"
@@ -6126,7 +6186,17 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
+              "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj"
+            },
+            "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj": {
+              "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj"
+            },
+            "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.ViewModels\\CoolHub.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.ViewModels\\CoolHub.ViewModels.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

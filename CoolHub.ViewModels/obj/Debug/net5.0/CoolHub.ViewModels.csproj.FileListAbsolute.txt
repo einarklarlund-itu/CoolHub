@@ -1,0 +1,17 @@
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.deps.json
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\ref\CoolHub.ViewModels.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Models.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csprojAssemblyReference.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.AssemblyInfo.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csproj.CopyComplete
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\ref\CoolHub.ViewModels.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.pdb

@@ -1,0 +1,12 @@
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csprojAssemblyReference.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfoInputs.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfo.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.deps.json
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\bin\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.pdb

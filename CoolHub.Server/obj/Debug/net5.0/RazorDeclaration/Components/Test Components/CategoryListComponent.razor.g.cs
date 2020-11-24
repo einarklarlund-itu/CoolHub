@@ -103,7 +103,7 @@ using System.ComponentModel;
 #line default
 #line hidden
 #nullable disable
-    public partial class CategoryListComponent : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
+    public partial class CategoryListComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,30 +111,12 @@ using System.ComponentModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 28 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
        
     [CascadingParameter(Name = "CategoriesViewModel")]
     CategoriesViewModel CategoriesViewModel { get; set; }
 
     List<CategoryDetailsDTO> details = new List<CategoryDetailsDTO>();
-
-    protected async override Task OnInitializedAsync()
-    {
-        await SetDetails();
-    }
-
-    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
-    {
-        await SetDetails();
-    }
-
-    async Task SetDetails() =>
-        details = await CategoriesViewModel.GetCategoryDetails();
-
-    public void Dispose()
-    {
-        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
-    }
 
 #line default
 #line hidden

@@ -111,3 +111,9 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\R
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\ToDoPage.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Categories.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\ToDoPage.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Models.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.ViewModels.dll
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.ViewModels.pdb

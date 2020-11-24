@@ -12,6 +12,8 @@ namespace CoolHub.ViewModels
     public class CategoriesViewModel : BaseViewModel, ICategoriesViewModel
     {
         private readonly ICategoryRepository _repository;
+        public List<CategoryDetailsDTO> Categories =>
+            _repository.Read().ToList();
 
         public CategoriesViewModel(ICategoryRepository repository)
         {
@@ -23,19 +25,13 @@ namespace CoolHub.ViewModels
             return _repository.NumberOfCategories();
         }
 
-        public async Task<List<CategoryDetailsDTO>> GetCategoryDetails()
-        {
-            IQueryable<CategoryDetailsDTO> details = await _repository.Read();
-            return await details.ToListAsync();
-        }
-
-        public async Task<Status> CreateCategory(CategoryCreateDTO category)
+        public Status CreateCategory(CategoryCreateDTO category)
         {
             Debug.WriteLine("CreateCategory called in CategoriesViewModel");
 
             IsBusy = true;
 
-            (Status status, int categoryId) response = await _repository.Create(category);
+            (Status status, int categoryId) response = _repository.Create(category);
 
             OnPropertyChanged(nameof(_repository));
 

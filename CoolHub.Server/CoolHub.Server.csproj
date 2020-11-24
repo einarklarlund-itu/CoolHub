@@ -10,4 +10,10 @@
     <PackageReference Include="System.Data.SQLite" Version="1.0.113.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoolHub.Entities\CoolHub.Entities.csproj" />
+    <ProjectReference Include="..\CoolHub.Models\CoolHub.Models.csproj" />
+    <ProjectReference Include="..\CoolHub.ViewModels\CoolHub.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>

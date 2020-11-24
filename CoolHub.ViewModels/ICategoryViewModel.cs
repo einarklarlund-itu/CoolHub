@@ -8,6 +8,6 @@ namespace CoolHub.ViewModels
 {
     public interface ICategoriesViewModel
     {
-        Task<Status> CreateCategory(CategoryCreateDTO category);
+        Status CreateCategory(CategoryCreateDTO category);
     }    
 }

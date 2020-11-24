@@ -124,12 +124,12 @@ using System.Diagnostics;
     CategoriesViewModel CategoriesViewModel { get; set; }
     private CategoryCreateDTO Category = new CategoryCreateDTO();
 
-    private async void HandleCategoryCreated()
+    private void HandleCategoryCreated()
     {
 
         Debug.WriteLine("CreateCategory called in CategoriesFormComponent");
 
-        await CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+        CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
         {
             Name = Category.Name,
             Description = Category.Description

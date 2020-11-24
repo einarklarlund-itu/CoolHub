@@ -6,8 +6,10 @@ namespace CoolHub.Models
     public interface ICategoryRepository
     {
         int NumberOfCategories();
-        Task<(Status response, int categoryId)> Create(CategoryCreateDTO category);
-        Task<IQueryable<CategoryDetailsDTO>> Read();
+        (Status response, int categoryId) Create(CategoryCreateDTO category);
+        Task<(Status response, int categoryId)> CreateAsync(CategoryCreateDTO category);
+        IQueryable<CategoryDetailsDTO> Read();
+        Task<IQueryable<CategoryDetailsDTO>> ReadAsync();
         Task<CategoryDetailsDTO> Read(int categoryId);
         Task<Status> Update(CategoryUpdateDTO tag);
         Task<Status> Delete(int categoryId, bool force = false);
