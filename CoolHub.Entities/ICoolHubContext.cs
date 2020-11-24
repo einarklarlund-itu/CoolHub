@@ -11,6 +11,7 @@ namespace CoolHub.Entities
         DbSet<Topic> Topics { get; set; }
         DbSet<Resource> Resources { get; set; }
         DbSet<User> Users { get; set; }
+        DbSet<Comment> Comments { get; set; }
         // Do we need any Many-to-many classes (like tasktags)?
         int SaveChanges();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

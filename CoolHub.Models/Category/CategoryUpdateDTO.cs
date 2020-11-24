@@ -7,6 +7,6 @@ namespace CoolHub.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<string> Topics { get; set; }
+        public ICollection<TopicDTO> Topics { get; set; }
     }
 }

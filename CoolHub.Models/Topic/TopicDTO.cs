@@ -3,10 +3,9 @@ using CoolHub.Entities;
 
 namespace CoolHub.Models
 {
-    public class CategoryDetailsDTO
+    public class TopicDTO
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<TopicDTO> Topics { get; set; }
     }
 }

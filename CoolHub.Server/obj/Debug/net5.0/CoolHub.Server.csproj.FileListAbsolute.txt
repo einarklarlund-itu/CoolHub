@@ -117,3 +117,5 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\C
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Entities.pdb
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Models.pdb
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.ViewModels.pdb
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Resource.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Resource.razor.g.cs

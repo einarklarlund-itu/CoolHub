@@ -1,0 +1,49 @@
+@page "/resource"
+
+@namespace CoolHub
+
+@using CoolHub.ViewModels
+@using System.ComponentModel
+@using Microsoft.Extensions.Configuration
+
+@inject ResourcesViewModel ResourcesViewModel
+@inject IConfiguration Configuration
+@implements IDisposable
+
+@* Add the viewmodel as a cascading value, so that all the children of the 
+ToDoPage component have a reference to the viewmodel*@
+
+<CascadingValue Value=@ResourcesViewModel Name="ResourcesViewModel">
+    <CategoryListComponent />
+    <CategoryFormComponent />
+</CascadingValue>
+
+@* <h1>Number of categories: @ResourcesViewModel.NumberOfCategories()</h1> *@
+
+@code 
+{
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
+    {
+        ResourcesViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        ResourcesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
+}

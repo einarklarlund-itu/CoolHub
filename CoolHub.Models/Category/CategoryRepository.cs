@@ -85,7 +85,11 @@ namespace CoolHub.Models
                 {
                     Name = c.Name,
                     Description = c.Description,
-                    Topics = c.Topics
+                    Topics = c.Topics.Select(t => new TopicDTO()
+                    {
+                        Name = t.Name,
+                        Description = t.Description
+                    }).ToList()
                 };
         }
 
@@ -97,7 +101,11 @@ namespace CoolHub.Models
                 {
                     Name = c.Name,
                     Description = c.Description,
-                    Topics = c.Topics
+                    Topics = c.Topics.Select(t => new TopicDTO
+                    {
+                        Name = t.Name,
+                        Description = t.Description
+                    }).ToList()
                 });
         }
 
@@ -109,7 +117,11 @@ namespace CoolHub.Models
                        {
                            Name = c.Name,
                            Description = c.Description,
-                           Topics = c.Topics
+                           Topics = c.Topics.Select(t => new TopicDTO()
+                           {
+                               Name = t.Name,
+                               Description = t.Description
+                           }).ToList()
                        };
 
             return await tags.FirstOrDefaultAsync();
@@ -133,9 +145,10 @@ namespace CoolHub.Models
             }
 
             entity.Name = category.Name;
-            entity.Name = category.Description;
+            entity.Description = category.Description;
             entity.Topics = _context.Topics
-                .Where(c => category.Topics.Contains(c.Name))
+                .Where(t1 => category.Topics.Any(t2 => 
+                    t1.Name == t2.Name))
                 .ToList();
 
             await _context.SaveChangesAsync();
