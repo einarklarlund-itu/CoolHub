@@ -68,17 +68,14 @@ namespace CoolHub.Entities
             modelBuilder.Entity<Topic>()
                 .HasMany(t => t.Resources)
                 .WithOne(r => r.Topic);
-                // .IsRequired();
                 
             modelBuilder.Entity<Resource>()
                 .HasMany(r => r.Comments)
                 .WithOne(c => c.Resource);
-                // .IsRequired();
 
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Comments)
                 .WithOne(c => c.User);
-                // .IsRequired();
 
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Name)
