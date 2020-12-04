@@ -36,7 +36,6 @@ namespace CoolHub.Server
                         
             services.AddScoped<IToDoViewModel, ToDoFinalViewModel>();
             services.AddScoped<CategoriesViewModel>();
-            // services.AddScoped<ICategoriesViewModel, CategoriesViewModel>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             

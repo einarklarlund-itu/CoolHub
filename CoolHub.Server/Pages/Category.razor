@@ -1,0 +1,85 @@
+@page "/category/{categoryid?}"
+
+@namespace CoolHub
+
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using System.ComponentModel
+
+@inject CategoriesViewModel CategoriesViewModel
+
+@implements IDisposable
+
+@if (category == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Description</th>
+                <th>Resources</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var topic in category.topics)
+            {
+                <tr>
+                    <td>@topic.Name</td>
+                    <td>@topic.Description</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code 
+{
+    [Parameter]
+    public string categoryId { get; set; }
+
+    private CategoryDetailsDTO category;
+
+    private int id;
+
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
+    {
+        if(String.IsNullOrEmpty(categoryId))
+        {
+
+        }
+        if(!Int32.TryParse(categoryId, out id))
+        {
+
+        }
+
+        category = CategoriesViewModel.Read(id);
+
+        CategoriesViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        
+        await base.OnInitializedAsync();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    } 
+}
