@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace CoolHub.ViewModels
 {
-    public class ResourcesViewModel : BaseViewModel, IResourceViewModel
+    public class ResourcesViewModel : BaseViewModel
     {
         private readonly IResourceRepository _repository;
         public List<ResourceDetailsDTO> CurrentResource;

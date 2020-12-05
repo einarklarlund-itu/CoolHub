@@ -13,3 +13,11 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Models\obj\Debug\net5.0\C
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Models\obj\Debug\net5.0\ref\CoolHub.Models.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.csprojAssemblyReference.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.AssemblyInfoInputs.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.AssemblyInfo.cs
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.csproj.CoreCompileInputs.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\ref\CoolHub.Models.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.pdb

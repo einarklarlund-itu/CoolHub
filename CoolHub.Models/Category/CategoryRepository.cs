@@ -132,7 +132,7 @@ namespace CoolHub.Models
             var categoryExists = await _context.Categories
                 .AnyAsync(t => t.Id != category.Id && t.Name == category.Name);
 
-            if (categoryExists)
+            if (!categoryExists)
             {
                 return Conflict;
             }

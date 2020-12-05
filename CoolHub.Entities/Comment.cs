@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
 namespace CoolHub.Entities
 {
     public class Comment

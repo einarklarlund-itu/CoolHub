@@ -10,3 +10,15 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\bin\Debug\net5.0
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\ref\CoolHub.Entities.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csprojAssemblyReference.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfoInputs.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfo.cs
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csproj.CoreCompileInputs.cache
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.deps.json
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.pdb

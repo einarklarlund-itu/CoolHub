@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using CoolHub.Entities;
 
 namespace CoolHub.Models
 {
-    public class ResourceDetailsDTO
+    public class TopicUpdateDTO
     {
-        public string id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<CommentDTO> Comments { get; set; }
+        public ICollection<ResourceDTO> Resources { get; set; }
     }
 }

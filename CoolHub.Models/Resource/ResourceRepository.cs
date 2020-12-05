@@ -129,7 +129,7 @@ namespace CoolHub.Models
             var resourceExists = await _context.Resources
                 .AnyAsync(t => t.Id != resource.Id && t.Name == resource.Name);
 
-            if (resourceExists)
+            if (!resourceExists)
             {
                 return Conflict;
             }

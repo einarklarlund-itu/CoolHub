@@ -15,3 +15,6 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\ref\CoolHub.ViewModels.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.pdb
+C:\Users\magnu\Documents\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\ref\CoolHub.ViewModels.dll
+C:\Users\magnu\Documents\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.pdb
