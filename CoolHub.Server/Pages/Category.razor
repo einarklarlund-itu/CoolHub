@@ -25,14 +25,14 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var topic in category.topics)
+            @* @foreach (var topic in category.topics)
             {
                 <tr>
                     <td>@topic.Name</td>
                     <td>@topic.Description</td>
                     <td></td>
                 </tr>
-            }
+            } *@
         </tbody>
     </table>
 }
@@ -58,8 +58,8 @@ else
 
         }
 
-        category = CategoriesViewModel.Read(id);
-
+        //category = CategoriesViewModel.Read(id); //Does not contain Read method
+        category = null;
         CategoriesViewModel.PropertyChanged += async (sender, e) => { 
             await InvokeAsync(() =>
             {

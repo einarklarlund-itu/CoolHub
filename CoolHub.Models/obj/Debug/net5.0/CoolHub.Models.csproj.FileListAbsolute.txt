@@ -29,3 +29,10 @@ C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\Cool
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.dll
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\ref\CoolHub.Models.dll
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\CoolHub.Models.deps.json
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\CoolHub.Models.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\ref\CoolHub.Models.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.csproj.CopyComplete

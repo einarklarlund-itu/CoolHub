@@ -21,3 +21,17 @@ C:\Users\magnu\Documents\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.Vie
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.dll
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\ref\CoolHub.ViewModels.dll
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.deps.json
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\ref\CoolHub.ViewModels.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.ViewModels.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Models.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csprojAssemblyReference.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.AssemblyInfoInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.AssemblyInfo.cs
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.ViewModels\obj\Debug\net5.0\CoolHub.ViewModels.csproj.CopyComplete

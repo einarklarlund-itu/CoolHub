@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Server\\CoolHub.Server.csproj": {}
+    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\Coolhub.Server\\CoolHub.Server.csproj": {}
   },
   "projects": {
     "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Server\\CoolHub.Server.csproj": {
+    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\Coolhub.Server\\CoolHub.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Server\\CoolHub.Server.csproj",
+        "projectUniqueName": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\Coolhub.Server\\CoolHub.Server.csproj",
         "projectName": "CoolHub.Server",
-        "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Server\\CoolHub.Server.csproj",
+        "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\Coolhub.Server\\CoolHub.Server.csproj",
         "packagesPath": "C:\\Users\\elmel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Server\\obj\\",
+        "outputPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\Coolhub.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\elmel\\AppData\\Roaming\\NuGet\\NuGet.Config"

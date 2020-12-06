@@ -13,84 +13,84 @@ namespace CoolHub
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 1 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 2 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 3 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 4 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 5 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 6 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 7 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 8 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 9 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using CoolHub.Server;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\_Imports.razor"
+#line 10 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
 using CoolHub.Server.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
+#line 5 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\AllCategories.razor"
 using CoolHub.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
+#line 6 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\AllCategories.razor"
 using System.ComponentModel;
 
 #line default
@@ -105,7 +105,7 @@ using System.ComponentModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\magnu\Documents\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
+#line 23 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\AllCategories.razor"
  
     // update the entire view, the page and its components on PropertyChanged
     protected override async Task OnInitializedAsync()
