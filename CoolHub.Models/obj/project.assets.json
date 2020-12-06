@@ -6115,19 +6115,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\magnu\\.nuget\\packages\\": {}
+    "C:\\Users\\elmel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\magnu\\Documents\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
+      "projectUniqueName": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
       "projectName": "CoolHub.Models",
-      "projectPath": "C:\\Users\\magnu\\Documents\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
-      "packagesPath": "C:\\Users\\magnu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\magnu\\Documents\\CoolHub\\CoolHub.Models\\obj\\",
+      "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
+      "packagesPath": "C:\\Users\\elmel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\magnu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\elmel\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6139,8 +6139,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\magnu\\Documents\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
-              "projectPath": "C:\\Users\\magnu\\Documents\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj"
+            "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
+              "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj"
             }
           }
         }

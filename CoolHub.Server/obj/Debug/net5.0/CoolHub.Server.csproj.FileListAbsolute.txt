@@ -242,3 +242,6 @@ C:\Users\magnu\Documents\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaratio
 C:\Users\magnu\Documents\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\AllCategories.razor.g.cs
 C:\Users\magnu\Documents\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Category.razor.g.cs
 C:\Users\magnu\Documents\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Category.razor.g.cs
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\ref\CoolHub.Server.dll

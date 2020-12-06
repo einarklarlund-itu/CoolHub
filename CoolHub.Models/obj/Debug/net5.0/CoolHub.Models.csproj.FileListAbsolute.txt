@@ -21,3 +21,11 @@ C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.
 C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.dll
 C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\ref\CoolHub.Models.dll
 C:\Users\magnu\Documents\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.csprojAssemblyReference.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.AssemblyInfoInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.AssemblyInfo.cs
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.csproj.CoreCompileInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\ref\CoolHub.Models.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Models\obj\Debug\net5.0\CoolHub.Models.pdb

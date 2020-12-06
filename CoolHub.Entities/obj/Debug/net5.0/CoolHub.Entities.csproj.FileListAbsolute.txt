@@ -22,3 +22,15 @@ C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entit
 C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.dll
 C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\ref\CoolHub.Entities.dll
 C:\Users\magnu\Documents\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.deps.json
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\bin\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\bin\Debug\net5.0\CoolHub.Entities.pdb
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csprojAssemblyReference.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfoInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.AssemblyInfo.cs
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.csproj.CoreCompileInputs.cache
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\ref\CoolHub.Entities.dll
+C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Entities\obj\Debug\net5.0\CoolHub.Entities.pdb

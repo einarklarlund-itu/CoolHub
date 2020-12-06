@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using CoolHub.Entities;
+using static CoolHub.Models.Status;
 
 namespace CoolHub.Models {
     public class TopicRepository : ITopicRepository
@@ -19,12 +20,12 @@ namespace CoolHub.Models {
 
         public (Status response, int topicId) Create(TopicCreateDTO topic)
         {
-
+            return (Conflict, -1);
         }
 
         public Task<(Status response, int topicId)> CreateAsync(TopicCreateDTO topic)
         {
-
+            return Task.Run(() => (Conflict, -1));
         }
 
         public IQueryable<TopicDetailsDTO> Read()
@@ -37,7 +38,7 @@ namespace CoolHub.Models {
                 };
         }
 
-        public Task<IQueryable<TopicDetailsDTO>> ReadAsync()
+        public async Task<IQueryable<TopicDetailsDTO>> ReadAsync()
         { 
             return await Task.Run(() =>
                 (from t in _context.Topics
@@ -45,16 +46,15 @@ namespace CoolHub.Models {
                 {
                     Name = t.Name,
                     Description = t.Description
-                }).ToList());
+                }).ToListAsync());
         }
 
-        public Task<TopicDetailsDTO> Read(string topicName)
+        public async Task<TopicDetailsDTO> Read(string topicName) // TODO: why task (needs async?)
         {
             return await Task.Run(() =>
                 _context.Topics.Select(t => new TopicDetailsDTO{Name = t.Name,
                                                                 Description = t.Description,
-                                                                Resources = t.Topics.Select(new ResourceDTO{
-                                                                    Name
+                                                                Resources = t.Resources.Select(new ResourceDTO{
                                                                 }).ToList()}).Where(t => t.Name == topicName));
         }
 
@@ -64,21 +64,21 @@ namespace CoolHub.Models {
             return null;
         }
 
-        public Task<Status> Update(TopicUpdateDTO topic)
+        public async Task<Status> Update(TopicUpdateDTO topic) // TODO: why await? needs async
         {
             var topicExists = await _context.Topics
-                .AnyAsync(t => t.Id != category.Id && t.Name == category.Name);
+                .Any(t => t.Id != category.Id && t.Name == category.Name);
 
             if (!topicExists)
             {
-                return Conflict;
+                return await Task.Run(() => Conflict);
             }
 
             var entity = await _context.Topics.FindAsync(topic.Id);
 
             if (entity == null)
             {
-                return NotFound;
+                return await Task.Run(() =>NotFound);
             }
 
             entity.Name = topic.Name;

@@ -45,7 +45,7 @@ namespace CoolHub.Models
             Debug.WriteLine("_context.SaveChangesAsync returned in CategoryRepository");
 
             Debug.WriteLine("Create point 4");
-            return (Created, entity.Id);
+            return await Task.Run(() =>(Created, entity.Id));
         }
         
         public (Status response, int categoryId) Create(CategoryCreateDTO category)
@@ -109,7 +109,7 @@ namespace CoolHub.Models
                 });
         }
 
-        public async Task<CategoryDetailsDTO> Read(int tagId)
+        public async Task<CategoryDetailsDTO> Read(int tagId) // TODO: why async and await and Task?
         {
             var tags = from c in _context.Categories
                        where c.Id == tagId

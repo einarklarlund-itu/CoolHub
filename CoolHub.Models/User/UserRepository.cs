@@ -39,62 +39,64 @@ namespace CoolHub.Models
         
         public Task<(Status response, int userId)> CreateAsync(UserCreateDTO user)
         {
-            return null;   
+            return Task.Run(() => (Conflict, -1));   
         }
 
         public Task<UserDetailsDTO> Read(int userId)
         {
             var user = from u in _context.Users
-                       where u.Id = userId
+                       where u.Id == userId
                        select new UserDetailsDTO
                        {
                            Name = u.Name,
                            Email = u.Email,
                            Comments = u.Comments
                        };
-            return user;
+            return Task.Run(() => user);
         }
             
-        public Task<Status> Update(UserUpdateDTO user)
+        public async Task<Status> Update(UserUpdateDTO user) // TODO: why task and asyyyync?
         {
             var userExist = _context.Users.Any(u => u.Email == user.Email);
             if (!userExist)
             {
-                return Conflict;
+                return Task.Run(() => Conflict);
             }
 
-            var entity = _context.Users.Any(u => u.Email == user.Email);
+            var entity = _context.Users.Any(u => u.Email == user.Email); // TODO: this is boolean?
             if (entity == null)
             {
-                return NotFound;
+                return Task.Run(() => NotFound);
             }
 
-            entity.Name = user.Name;
-            entity.Email = user.Email;
-            entity.Comments = _context.Comments
-            .Where(c => user.Comments.Any(q => q.Id == c.Id)
-            .ToList());
+            // TODO: entity is boolean - this is fuckeddd
+
+            // entity.Name = user.Name;
+            // entity.Email = user.Email;
+            // entity.Comments = _context.Comments
+            // .Where(c => user.Comments.Any(q => q.Id == c.Id)
+            // .ToList());
 
             await _context.SaveChangesAsync();
-            return Updated;
+            return await Task.Run(() => Updated);
         }
 
-        public Task<Status> Delete(int userId, bool force = false)
+        public async Task<Status> Delete(int userId, bool force = false)
         {
-            var entity = _context.Users.FirstOrDefaultAsync(u => u.Id);
+            var entity = _context.Users.FirstOrDefaultAsync(u => u.Id); // TODO: why async?
             if (entity == null)
             {
-                return Conflict;
+                return await Task.Run(() =>Conflict);
             }
 
             if (!force && entity.Comments.Any())
             {
-                    return Conflict;
+                    return await Task.Run(() =>Conflict);
             }
 
             _context.Users.Remove(entity);
-            await _context.SaveChangesAsync();
-            return Deleted;
+            await _context.SaveChangesAsync(); // TODO: why async?
+            return await Task.Run(() => Deleted);
         }
     }
 }
