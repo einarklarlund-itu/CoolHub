@@ -10,7 +10,7 @@ namespace CoolHub.Models
         Task<(Status response, int categoryId)> CreateAsync(CategoryCreateDTO category);
         IQueryable<CategoryDetailsDTO> Read();
         Task<IQueryable<CategoryDetailsDTO>> ReadAsync();
-        Task<CategoryDetailsDTO> Read(int categoryId);
+        CategoryDetailsDTO Read(int categoryId);
         Task<Status> Update(CategoryUpdateDTO tag);
         Task<Status> Delete(int categoryId, bool force = false);
     }

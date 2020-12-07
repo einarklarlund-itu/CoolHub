@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace CoolHub.Server
+namespace CoolHub
 {
     #line hidden
     using System;
@@ -82,13 +82,72 @@ using CoolHub.Server.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class App : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
+using CoolHub.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
+using CoolHub.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
+using CoolHub.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class TopicFormComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 29 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
+       
+    [Parameter]
+    public EventCallback OnCategoryFormSubmitted { get; set; }
+    
+    [CascadingParameter(Name = "NewTopic")]
+    private TopicCreateDTO NewTopic { get; set; }
+
+    private void CreateCategory()
+    {
+        /*NewTopic = new TopicCreateDTO()
+        {
+            Name = NewTopic.Name,
+            Description = NewTopic.Description
+        };*/
+        
+        OnCategoryFormSubmitted.InvokeAsync();
+
+        /*AllCategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+        {
+            Name = Category.Name,
+            Description = Category.Description
+        });
+
+        Category = new CategoryCreateDTO(); */ 
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

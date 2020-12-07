@@ -11,7 +11,7 @@ namespace CoolHub.Models
         IQueryable<TopicDetailsDTO> Read();
         Task<IQueryable<TopicDetailsDTO>> ReadAsync();
         Task<TopicDetailsDTO> Read(int topicId);
-        Task<Status> Update(TopicUpdateDTO topic);
-        Task<Status> Delete(int topicId, bool force = false);
+        Status Update(TopicUpdateDTO topic);
+        Status Delete(int topicId, bool force = false);
     }
 }

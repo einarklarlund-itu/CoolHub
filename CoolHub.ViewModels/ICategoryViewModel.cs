@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CoolHub.ViewModels
 {
-    public interface ICategoriesViewModel
+    public interface IAllCategoriesViewModel
     {
         Status CreateCategory(CategoryCreateDTO category);
     }    

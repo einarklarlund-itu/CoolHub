@@ -1,14 +1,13 @@
-@page "/category/{categoryid?}"
-
+@page "/category/{categoryIdString}"
 @namespace CoolHub
 
 @using CoolHub.ViewModels
 @using CoolHub.Models
 @using System.ComponentModel
+@using Microsoft.Extensions.Configuration
 
-@inject CategoriesViewModel CategoriesViewModel
-
-@implements IDisposable
+@inject CategoryViewModel CategoryViewModel
+@inject IConfiguration Configuration
 
 @if (category == null)
 {
@@ -16,7 +15,11 @@
 }
 else
 {
-    <table class="table">
+    <h1>@category.Name</h1>
+
+    <p>@category.Description</p>
+
+    @* <table class="table">
         <thead>
             <tr>
                 <th>Topic</th>
@@ -25,61 +28,74 @@ else
             </tr>
         </thead>
         <tbody>
-            @* @foreach (var topic in category.topics)
+            @foreach (var topic in category.Topics)
             {
                 <tr>
                     <td>@topic.Name</td>
                     <td>@topic.Description</td>
-                    <td></td>
+                    <td>@ResourceDTOsToString(topic.Resources)</td>
                 </tr>
-            } *@
+            }
         </tbody>
-    </table>
+    </table> *@
+    
+    <CascadingValue Value=@TopicDTOs Name="TopicDTOs">
+        <TopicListComponent  @ref="topicListComponent"> </TopicListComponent>
+    </CascadingValue>
+
+    <CascadingValue Value=@NewTopic Name="NewTopic">
+        <TopicFormComponent OnCategoryFormSubmitted="CategoryFormSubmittedHandler"> </TopicFormComponent>
+    </CascadingValue>
 }
 
-@code 
-{
+@code {
     [Parameter]
-    public string categoryId { get; set; }
+    public string categoryIdString { get; set; }
+
+    public ICollection<TopicDTO> TopicDTOs => category.Topics.ToList();
+
+    public TopicCreateDTO NewTopic { get; set; }
+
+    private int categoryId;
 
     private CategoryDetailsDTO category;
 
-    private int id;
+    private TopicListComponent topicListComponent;
 
-    // update the entire view, the page and its components on PropertyChanged
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        if(String.IsNullOrEmpty(categoryId))
+        if(Int32.TryParse(categoryIdString, out categoryId))
         {
-
+            category = CategoryViewModel.GetCategoryById(categoryId);
         }
-        if(!Int32.TryParse(categoryId, out id))
+        else
         {
-
+            // some error handling behavior?
         }
 
-        //category = CategoriesViewModel.Read(id); //Does not contain Read method
-        category = null;
-        CategoriesViewModel.PropertyChanged += async (sender, e) => { 
-            await InvokeAsync(() =>
-            {
-                StateHasChanged();
-            });
-        };
+        NewTopic = new TopicCreateDTO();
+    }
+
+    private void CategoryFormSubmittedHandler()
+    {
+        NewTopic.CategoryId = categoryId;
+
+        CategoryViewModel.CreateTopic(NewTopic);
         
-        await base.OnInitializedAsync();
+        NewTopic = new TopicCreateDTO();
+
+        topicListComponent.UpdateList();
     }
 
-    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    private string ResourceDTOsToString(ICollection<ResourceDTO> resourceDTOs)
     {
-        await InvokeAsync(() =>
+        string str = "";
+        
+        foreach(var resourceDTO in resourceDTOs)
         {
-            StateHasChanged();
-        });
-    }
+            str += resourceDTO.Name + ", ";
+        }
 
-    public void Dispose()
-    {
-        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
-    } 
+        return str.Length > 2 ? str.Substring(0, str.Length - 2) : "";
+    }
 }

@@ -25,10 +25,7 @@ namespace CoolHub.Models
 
         public async Task<(Status response, int categoryId)> CreateAsync(CategoryCreateDTO category)
         {
-            Debug.WriteLine("Create called in CategoryRepository");
             var categoryExists = await _context.Categories.AnyAsync(c => c.Name == category.Name);
-
-            Debug.WriteLine("_context.Categories.AnyAsync returned in CategoryRepository");
             if (categoryExists)
             {
                 return (Conflict, 0);
@@ -42,18 +39,13 @@ namespace CoolHub.Models
 
             _context.Categories.Add(entity);
             await _context.SaveChangesAsync();
-            Debug.WriteLine("_context.SaveChangesAsync returned in CategoryRepository");
-
-            Debug.WriteLine("Create point 4");
-            return await Task.Run(() =>(Created, entity.Id));
+            return (Created, entity.Id);
         }
         
         public (Status response, int categoryId) Create(CategoryCreateDTO category)
         {
-            Debug.WriteLine("Create called in CategoryRepository");
             var categoryExists = _context.Categories.Any(c => c.Name == category.Name);
 
-            Debug.WriteLine("_context.Categories.AnyAsync returned in CategoryRepository");
             if (categoryExists)
             {
                 return (Conflict, 0);
@@ -67,22 +59,16 @@ namespace CoolHub.Models
 
             _context.Categories.Add(entity);
             _context.SaveChanges();
-            Debug.WriteLine("_context.SaveChangesAsync returned in CategoryRepository");
 
-            Debug.WriteLine("Create point 4");
             return (Created, entity.Id);
         }
-
-        // public async List< GetAllCategories()
-        // {
-
-        // }
 
         public IQueryable<CategoryDetailsDTO> Read()
         {
             return from c in _context.Categories
                 select new CategoryDetailsDTO
                 {
+                    Id = c.Id,
                     Name = c.Name,
                     Description = c.Description,
                     Topics = c.Topics.Select(t => new TopicDTO()
@@ -109,10 +95,10 @@ namespace CoolHub.Models
                 });
         }
 
-        public async Task<CategoryDetailsDTO> Read(int tagId) // TODO: why async and await and Task?
+        public CategoryDetailsDTO Read(int categoryId)
         {
             var tags = from c in _context.Categories
-                       where c.Id == tagId
+                       where c.Id == categoryId
                        select new CategoryDetailsDTO
                        {
                            Name = c.Name,
@@ -120,11 +106,16 @@ namespace CoolHub.Models
                            Topics = c.Topics.Select(t => new TopicDTO()
                            {
                                Name = t.Name,
-                               Description = t.Description
+                               Description = t.Description,
+                               Resources = t.Resources.Select(r => new ResourceDTO()
+                               {
+                                   Name = r.Name,
+                                   Description = r.Description
+                               }).ToList()
                            }).ToList()
                        };
 
-            return await tags.FirstOrDefaultAsync();
+            return tags.FirstOrDefault();
         }
 
         public async Task<Status> Update(CategoryUpdateDTO category)

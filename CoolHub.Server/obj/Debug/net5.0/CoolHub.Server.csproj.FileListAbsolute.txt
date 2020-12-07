@@ -107,9 +107,7 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\C
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\ref\CoolHub.Server.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.pdb
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.genruntimeconfig.cache
-C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Categories.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\ToDoPage.razor.g.cs
-C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Categories.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\ToDoPage.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Entities.dll
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\bin\Debug\net5.0\CoolHub.Models.dll
@@ -365,3 +363,11 @@ C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\Cool
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.Views.pdb
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.csproj.CopyComplete
 C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\CoolHub.Server\obj\Debug\net5.0\CoolHub.Server.genruntimeconfig.cache
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\AllCategories.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Category.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\AllCategories.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Category.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\TopicFormComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\TopicListComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\TopicFormComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\TopicListComponent.razor.g.cs

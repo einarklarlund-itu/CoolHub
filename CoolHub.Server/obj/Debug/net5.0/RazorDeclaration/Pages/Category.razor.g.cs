@@ -13,98 +13,105 @@ namespace CoolHub
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 1 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 2 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 3 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 4 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 5 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 6 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 8 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 9 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using CoolHub.Server;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 10 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using CoolHub.Server.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\Category.razor"
+#line 4 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
 using CoolHub.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\Category.razor"
+#line 5 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
 using CoolHub.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\Category.razor"
+#line 6 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
 using System.ComponentModel;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/category/{categoryid?}")]
-    public partial class Category : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
+#nullable restore
+#line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/category/{categoryIdString}")]
+    public partial class Category : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,56 +119,63 @@ using System.ComponentModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Pages\Category.razor"
- 
+#line 51 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
+       
     [Parameter]
-    public string categoryId { get; set; }
+    public string categoryIdString { get; set; }
+
+    public ICollection<TopicDTO> TopicDTOs => category.Topics.ToList();
+
+    public TopicCreateDTO NewTopic { get; set; }
+
+    private int categoryId;
 
     private CategoryDetailsDTO category;
 
-    private int id;
+    private TopicListComponent topicListComponent;
 
-    // update the entire view, the page and its components on PropertyChanged
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        if(String.IsNullOrEmpty(categoryId))
+        if(Int32.TryParse(categoryIdString, out categoryId))
         {
-
+            category = CategoryViewModel.GetCategoryById(categoryId);
         }
-        if(!Int32.TryParse(categoryId, out id))
+        else
         {
-
+            // some error handling behavior?
         }
 
-        //category = CategoriesViewModel.Read(id); //Does not contain Read method
-        category = null;
-        CategoriesViewModel.PropertyChanged += async (sender, e) => { 
-            await InvokeAsync(() =>
-            {
-                StateHasChanged();
-            });
-        };
+        NewTopic = new TopicCreateDTO();
+    }
+
+    private void CategoryFormSubmittedHandler()
+    {
+        NewTopic.CategoryId = categoryId;
+
+        CategoryViewModel.CreateTopic(NewTopic);
         
-        await base.OnInitializedAsync();
+        NewTopic = new TopicCreateDTO();
+
+        topicListComponent.UpdateList();
     }
 
-    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    private string ResourceDTOsToString(ICollection<ResourceDTO> resourceDTOs)
     {
-        await InvokeAsync(() =>
+        string str = "";
+        
+        foreach(var resourceDTO in resourceDTOs)
         {
-            StateHasChanged();
-        });
-    }
+            str += resourceDTO.Name + ", ";
+        }
 
-    public void Dispose()
-    {
-        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
-    } 
+        return str.Length > 2 ? str.Substring(0, str.Length - 2) : "";
+    }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private CategoriesViewModel CategoriesViewModel { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private CategoryViewModel CategoryViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

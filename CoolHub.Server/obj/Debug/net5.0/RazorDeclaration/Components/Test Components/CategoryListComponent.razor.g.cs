@@ -13,91 +13,91 @@ namespace CoolHub
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 1 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 2 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 3 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 4 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 5 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 6 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 8 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 9 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using CoolHub.Server;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\_Imports.razor"
+#line 10 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\_Imports.razor"
 using CoolHub.Server.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 1 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
 using CoolHub.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 2 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
 using CoolHub.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 3 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
 using System.ComponentModel;
 
 #line default
@@ -111,16 +111,17 @@ using System.ComponentModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\elmel\ITU\BDSA2020\Project\CoolHub\Coolhub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 30 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
        
-    [CascadingParameter(Name = "CategoriesViewModel")]
-    CategoriesViewModel CategoriesViewModel { get; set; }
+    [CascadingParameter(Name = "AllCategoriesViewModel")]
+    AllCategoriesViewModel AllCategoriesViewModel { get; set; }
 
     List<CategoryDetailsDTO> details = new List<CategoryDetailsDTO>();
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

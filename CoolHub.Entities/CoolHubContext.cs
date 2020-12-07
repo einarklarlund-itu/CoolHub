@@ -40,7 +40,7 @@ namespace CoolHub.Entities
                 // using var con = new SQLiteConnection(cs);
                 // con.Open();
 
-                var connectionString = @"Data Source=AWESOMMER\SQLEXPRESS01;Initial Catalog=CoolHubDB;Integrated Security=True";
+                var connectionString = @"Data Source=BINGUS\SQLEXPRESS;Initial Catalog=CoolHubDB;Integrated Security=True";
 
                 optionsBuilder.UseSqlServer(connectionString);
             //    optionsBuilder.UseSqlite(@"Data Source=:memory:");
@@ -56,9 +56,9 @@ namespace CoolHub.Entities
             //             .HasIndex(t => t.Name)
             //             .IsUnique();
 
-             modelBuilder.Entity<User>()
-                         .HasIndex(t => t.Email)
-                         .IsUnique();
+            // modelBuilder.Entity<User>()
+            //             .HasIndex(t => t.EmailAddress)
+            //             .IsUnique();
 
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Topics)

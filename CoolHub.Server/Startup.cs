@@ -35,9 +35,13 @@ namespace CoolHub.Server
             services.AddSingleton<WeatherForecastService>();
                         
             services.AddScoped<IToDoViewModel, ToDoFinalViewModel>();
-            services.AddScoped<CategoriesViewModel>();
+            services.AddScoped<AllCategoriesViewModel>();
+            services.AddScoped<CategoryViewModel>();
+            
+            // services.AddScoped<IAllCategoriesViewModel, AllCategoriesViewModel>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ITopicRepository, TopicRepository>();
             
             services.AddScoped<ICoolHubContext, CoolHubContext>();
             // services.AddDbContext<CoolHubContext>(options => 

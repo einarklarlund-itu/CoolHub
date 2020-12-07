@@ -7,7 +7,7 @@
 
 <hr />
 
-<EditForm Model="@Category" OnValidSubmit="@HandleCategoryCreated">
+<EditForm Model="@Category" OnValidSubmit="@CreateCategory">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -20,29 +20,26 @@
             <label for="notes">Description</label>
             <InputTextArea class="form-control" id="notes" @bind-Value=@Category.Description />
         </div>
-        <button type="submit" class="btn btn-primary" disabled="@CategoriesViewModel.IsBusy">Save</button>
+        <button type="submit" class="btn btn-primary" disabled="@AllCategoriesViewModel.IsBusy">Save</button>
     </div>
 
 </EditForm>
 
 
 @code {
-    [CascadingParameter(Name = "CategoriesViewModel")]
-    CategoriesViewModel CategoriesViewModel { get; set; }
+    [CascadingParameter(Name = "AllCategoriesViewModel")]
+    AllCategoriesViewModel AllCategoriesViewModel { get; set; }
+
     private CategoryCreateDTO Category = new CategoryCreateDTO();
 
-    private void HandleCategoryCreated()
+    private void CreateCategory()
     {
-
-        Debug.WriteLine("CreateCategory called in CategoriesFormComponent");
-
-        CategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+        AllCategoriesViewModel.CreateCategory(new CategoryCreateDTO()
         {
             Name = Category.Name,
             Description = Category.Description
         });
 
-        Category = new CategoryCreateDTO();
+        Category = new CategoryCreateDTO(); 
     }
-
 }

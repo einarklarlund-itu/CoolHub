@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj": {}
+    "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
+    "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj",
         "projectName": "CoolHub.Entities",
-        "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj",
-        "packagesPath": "C:\\Users\\elmel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\obj\\",
+        "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj",
+        "packagesPath": "C:\\Users\\Einar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\elmel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Einar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,30 +75,35 @@
         }
       }
     },
-    "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj": {
+    "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
         "projectName": "CoolHub.Models",
-        "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
-        "packagesPath": "C:\\Users\\elmel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Models\\obj\\",
+        "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\CoolHub.Models.csproj",
+        "packagesPath": "C:\\Users\\Einar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\elmel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Einar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
-                "projectPath": "C:\\Users\\elmel\\ITU\\BDSA2020\\Project\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj"
+              "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj": {
+                "projectPath": "C:\\Users\\Einar\\Documents\\Projects\\BDSA\\CoolHub\\CoolHub.Entities\\CoolHub.Entities.csproj"
               }
             }
           }

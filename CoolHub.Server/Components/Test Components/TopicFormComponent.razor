@@ -1,0 +1,54 @@
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using CoolHub.Entities
+@using System.Diagnostics
+
+@namespace CoolHub
+
+<hr />
+
+<EditForm Model="@NewTopic" OnValidSubmit="@CreateCategory">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="col-4">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <InputText class="form-control" id="name" @bind-Value=@NewTopic.Name />
+        </div>
+        <div class="form-group">
+            <label for="notes">Description</label>
+            <InputTextArea class="form-control" id="notes" @bind-Value=@NewTopic.Description />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+
+</EditForm>
+
+
+@code {
+    [Parameter]
+    public EventCallback OnCategoryFormSubmitted { get; set; }
+    
+    [CascadingParameter(Name = "NewTopic")]
+    private TopicCreateDTO NewTopic { get; set; }
+
+    private void CreateCategory()
+    {
+        /*NewTopic = new TopicCreateDTO()
+        {
+            Name = NewTopic.Name,
+            Description = NewTopic.Description
+        };*/
+        
+        OnCategoryFormSubmitted.InvokeAsync();
+
+        /*AllCategoriesViewModel.CreateCategory(new CategoryCreateDTO()
+        {
+            Name = Category.Name,
+            Description = Category.Description
+        });
+
+        Category = new CategoryCreateDTO(); */ 
+    }
+}

@@ -3,28 +3,31 @@
 @namespace CoolHub
 
 @using CoolHub.ViewModels
+@using CoolHub.Models
 @using System.ComponentModel
+@using Microsoft.Extensions.Configuration
 
-@inject CategoriesViewModel CategoriesViewModel
-
+@inject AllCategoriesViewModel AllCategoriesViewModel
+@inject IConfiguration Configuration
 @implements IDisposable
-
-<h1>Number of categories: @CategoriesViewModel.NumberOfCategories()</h1>
 
 @* Add the viewmodel as a cascading value, so that all the children of the 
 ToDoPage component have a reference to the viewmodel*@
 
-<CascadingValue Value=@CategoriesViewModel Name="CategoriesViewModel">
+<h1>Number of categories: @AllCategoriesViewModel.NumberOfCategories()</h1>
+
+<CascadingValue Value=@AllCategoriesViewModel Name="AllCategoriesViewModel">
     <CategoryListComponent />
     <CategoryFormComponent />
 </CascadingValue>
+
 
 @code 
 {
     // update the entire view, the page and its components on PropertyChanged
     protected override async Task OnInitializedAsync()
     {
-        CategoriesViewModel.PropertyChanged += async (sender, e) => { 
+        AllCategoriesViewModel.PropertyChanged += async (sender, e) => { 
             await InvokeAsync(() =>
             {
                 StateHasChanged();
@@ -33,7 +36,7 @@ ToDoPage component have a reference to the viewmodel*@
         await base.OnInitializedAsync();
     }
 
-    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    private async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
     {
         await InvokeAsync(() =>
         {
@@ -43,6 +46,6 @@ ToDoPage component have a reference to the viewmodel*@
 
     public void Dispose()
     {
-        CategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
-    } 
+        AllCategoriesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
 }

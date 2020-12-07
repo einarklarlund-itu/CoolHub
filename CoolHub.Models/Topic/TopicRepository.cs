@@ -1,6 +1,9 @@
 using System.Linq;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using CoolHub.Entities;
+using Microsoft.EntityFrameworkCore;
+using static CoolHub.Entities.State;
 using static CoolHub.Models.Status;
 
 namespace CoolHub.Models {
@@ -20,12 +23,22 @@ namespace CoolHub.Models {
 
         public (Status response, int topicId) Create(TopicCreateDTO topic)
         {
-            return (Conflict, -1);
+            var entity = new Topic
+            {
+                Name = topic.Name,
+                Description = topic.Description,
+                Category = _context.Categories.Find(topic.CategoryId)
+            };
+
+            _context.Topics.Add(entity);
+            _context.SaveChanges();
+            
+            return (Status.Created, entity.Id);
         }
 
         public Task<(Status response, int topicId)> CreateAsync(TopicCreateDTO topic)
         {
-            return Task.Run(() => (Conflict, -1));
+            return null;
         }
 
         public IQueryable<TopicDetailsDTO> Read()
@@ -38,27 +51,24 @@ namespace CoolHub.Models {
                 };
         }
 
-        public async Task<IQueryable<TopicDetailsDTO>> ReadAsync()
+        public Task<IQueryable<TopicDetailsDTO>> ReadAsync()
         { 
             return null;
-            // return await Task.Run(() =>
-            //     (from t in _context.Topics
-            //     select new TopicDetailsDTO
-            //     {
-            //         Name = t.Name,
-            //         Description = t.Description
-            //     }).ToList());
-            
         }
 
-        public async Task<TopicDetailsDTO> Read(string topicName) // TODO: why task (needs async?)
+        public TopicDetailsDTO Read(string topicName)
         {
-           return null; 
-            // return await Task.Run(() =>
-            //     _context.Topics.Select(t => new TopicDetailsDTO{Name = t.Name,
-            //                                                     Description = t.Description,
-            //                                                     Resources = t.Resources.Select(new ResourceDTO{
-            //                                                     }).ToList()}).Where(t => t.Name == topicName));
+            return _context.Topics.Select(t => new TopicDetailsDTO()
+                {
+                    Name = t.Name,
+                    Description = t.Description,
+                    Resources = t.Resources.Select(r => new ResourceDTO()
+                    {
+                        Name = r.Name,
+                        Description = r.Description 
+                    }).ToList()
+                }).Where(t => t.Name == topicName)
+                .FirstOrDefault();
         }
 
         
@@ -67,57 +77,57 @@ namespace CoolHub.Models {
             return null;
         }
 
-        public async Task<Status> Update(TopicUpdateDTO topic) // TODO: why await? needs async
+        public Status Update(TopicUpdateDTO topic)
         {
-            // var topicExists = await _context.Topics
-            //     .Any(t => t.Id != category.Id && t.Name == category.Name);
+            var topicExists = _context.Topics.Any(t => 
+                t.Id != topic.Id && t.Name == topic.Name);
 
-            // if (!topicExists)
-            // {
-            //     return await Task.Run(() => Conflict);
-            // }
+            if (!topicExists)
+            {
+                return Status.Conflict;
+            }
 
-            // var entity = await _context.Topics.FindAsync(topic.Id);
+            var entity = _context.Topics.Find(topic.Id);
 
-            // if (entity == null)
-            // {
-            //     return await Task.Run(() =>NotFound);
-            // }
+            if (entity == null)
+            {
+                return Status.NotFound;
+            }
 
-            // entity.Name = topic.Name;
-            // entity.Description = topic.Description;
-            // entity.Resources = _context.Resources
-            //     .Where(t1 => category.Resources.Any(t2 => 
-            //         t1.Name == t2.Name))
-            //     .ToList();
+            entity.Name = topic.Name;
+            entity.Description = topic.Description;
+            entity.Resources = _context.Resources
+                .Where(t1 => topic.Resources.Any(t2 => 
+                    t1.Name == t2.Name))
+                .ToList();
 
-            // await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
-            return await Task.Run(() => Updated);
+            return Updated;
         }
 
-        public async Task<Status> Delete(int topicId, bool force = false)
+        public Status Delete(int topicId, bool force = false)
         {
-            // //TODO: Consider deleting resources
-            //     var entity = await _context.Topics
-            //     .Include(c => c.Resources) // Should we also delete all the resources on a topic?
-            //     .FirstOrDefaultAsync(c => c.Id == topicId);
+            //TODO: Consider deleting resources
+                var entity = _context.Topics
+                .Include(c => c.Resources) // Should we also delete all the resources on a topic?
+                .FirstOrDefault(c => c.Id == topicId);
 
-            // if (entity == null)
-            // {
-            //     return NotFound;
-            // }
+            if (entity == null)
+            {
+                return NotFound;
+            }
 
-            // if (!force && entity.Topics.Any())
-            // {
-            //     return Conflict;
-            // }
+            if (!force && entity.Resources.Any())
+            {
+                return Conflict;
+            }
 
-            // _context.Topics.Remove(entity);
+            _context.Topics.Remove(entity);
 
-            // await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
-            return await Task.Run(() => Deleted);
+            return Deleted;
         }
     }
 }

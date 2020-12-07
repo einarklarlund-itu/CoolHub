@@ -9,13 +9,13 @@ using System.Diagnostics;
 
 namespace CoolHub.ViewModels
 {
-    public class CategoriesViewModel : BaseViewModel, ICategoriesViewModel
+    public class AllCategoriesViewModel : BaseViewModel
     {
         private readonly ICategoryRepository _repository;
         public List<CategoryDetailsDTO> Categories =>
             _repository.Read().ToList();
 
-        public CategoriesViewModel(ICategoryRepository repository)
+        public AllCategoriesViewModel(ICategoryRepository repository)
         {
             _repository = repository;
         }
@@ -25,9 +25,19 @@ namespace CoolHub.ViewModels
             return _repository.NumberOfCategories();
         }
 
+        public CategoryDetailsDTO GetCategoryById(int id)
+        {
+            return _repository.Read(id);
+        }
+
+        public ICollection<CategoryDetailsDTO> GetAllCategories()
+        {
+            return _repository.Read().ToList();
+        }
+
         public Status CreateCategory(CategoryCreateDTO category)
         {
-            Debug.WriteLine("CreateCategory called in CategoriesViewModel");
+            Debug.WriteLine("CreateCategory called in AllCategoriesViewModel");
 
             IsBusy = true;
 
