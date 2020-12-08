@@ -9,31 +9,41 @@ using System.Diagnostics;
 
 namespace CoolHub.ViewModels
 {
-    public class CategoryViewModel : BaseViewModel
+    public class AllCategoriesViewModel : BaseViewModel
     {
-        private readonly ICategoryRepository _categoryRepository;
-        private readonly ITopicRepository _topicRepository;
+        private readonly ICategoryRepository _repository;
         public List<CategoryDetailsDTO> Categories =>
-            _categoryRepository.Read().ToList();
+            _repository.Read().ToList();
 
-        public CategoryViewModel(ICategoryRepository categoryRepository, ITopicRepository topicRepository)
+        public AllCategoriesViewModel(ICategoryRepository repository)
         {
-            _categoryRepository = categoryRepository;
-            _topicRepository = topicRepository;
+            _repository = repository;
+        }
+
+        public int NumberOfCategories()
+        {
+            return _repository.NumberOfCategories();
         }
 
         public CategoryDetailsDTO GetCategoryById(int id)
         {
-            return _categoryRepository.Read(id);
+            return _repository.Read(id);
         }
 
-        public Status CreateTopic(TopicCreateDTO topic)
+        public ICollection<CategoryDetailsDTO> GetAllCategories()
         {
+            return _repository.Read().ToList();
+        }
+
+        public Status CreateCategory(CategoryCreateDTO category)
+        {
+            Debug.WriteLine("CreateCategory called in AllCategoriesViewModel");
+
             IsBusy = true;
 
-            (Status status, int categoryId) response = _topicRepository.Create(topic);
+            (Status status, int categoryId) response = _repository.Create(category);
 
-            OnPropertyChanged(nameof(_topicRepository));
+            OnPropertyChanged(nameof(_repository));
 
             IsBusy = false;
 

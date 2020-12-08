@@ -1,0 +1,98 @@
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using CoolHub.Entities
+@using System.Diagnostics
+
+@namespace CoolHub
+
+<hr />
+
+<EditForm Model="@User" OnValidSubmit="@SubmitButtonClicked">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    if(signUpButtonClicked)
+    {
+        <div class="col-4">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <InputText class="form-control" id="name" @bind-Value=@User.Name />
+            </div>
+            <div class="form-group">
+                <label for="notes">Email</label>
+                <InputTextArea class="form-control" id="email" @bind-Value=@User.Email />
+            </div>
+            <div class="form-group">
+                <label for="notes">Password</label>
+                <InputTextArea class="form-control" id="email" @bind-Value=@User.Password />
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button class="btn btn-primary" @onclick="@(() => CancelSignUp())">Cancel</button>
+        </div>
+    }
+    else
+    {
+        <div class="col-4">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <InputText class="form-control" id="name" @bind-Value=@username />
+            </div>
+            <div class="form-group">
+                <label for="notes">Password</label>
+                <InputTextArea class="form-control" id="email" @bind-Value=@password />
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+
+    }
+</EditForm>
+
+
+@code {
+    [CascadingParameter(Name = "LogInViewModel")]
+    LogInViewModel LogInViewModel { get; set; }
+
+    private UserCreateDTO User = new UserCreateDTO();
+
+    private string username;
+    private string password; 
+    private bool loginAttempted = false;
+    private bool loginSuccess = false;  
+    private bool signUpButtonClicked = false; 
+
+    private void AttemptLogin()
+    {
+        LogInViewModel.AttemptLogin(username, password);
+
+        User = new UserCreateDTO();
+    }
+
+    private void SubmitButtonClicked()
+    {
+        if(!signUpButtonClicked)
+        {
+            AttemptLogin();
+        }
+        else
+        {  
+            CreateUser();
+        }
+    }
+
+    public void SignUpButtonClicked()
+    {
+        signUpButtonClicked = true;
+    }
+
+    public void CancelSignUp()
+    {
+        signUpButtonClicked = false;        
+    }
+
+    private void CreateUser()
+    {
+        LogInViewModel.CreateUser(User);
+
+        User = new UserCreateDTO();
+    }
+}

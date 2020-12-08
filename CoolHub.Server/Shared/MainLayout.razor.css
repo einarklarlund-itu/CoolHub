@@ -36,7 +36,7 @@
 }
 
 .bodyin {
-    padding: 30px;
+    padding: 3rem;
     background: white;
     margin: 3rem;
     border-radius: 5px;
@@ -86,12 +86,12 @@
     }
 
     .sidebar {
-        position: sticky;
+        /* position: sticky; */
         top: 0;
     }
 
     .top-row {
-        position: sticky;
+        /* position: sticky; */
         top: 0;
         z-index: 1;
     }

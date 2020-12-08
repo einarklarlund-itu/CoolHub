@@ -1,0 +1,39 @@
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using System.ComponentModel
+
+@namespace CoolHub
+
+@inject NavigationManager NavigationManager
+
+@if (AllCategoriesViewModel?.IsBusy == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+        <div class="card mb-3 bg-light category-div" style="min-width: 18rem; max-width: 18rem;">
+
+            @* <div class="card-header">@(category.Description ?? string.Empty)</div> *@
+            @* <h5 class="card-title">@category.Name</h5>
+            <p class="card-text">@category.Description</p> *@
+            <button disabled="@AllCategoriesViewModel.IsBusy" id="category-button" class="btn  @("btn-primary")" @onclick="@(() => NavigationManager.NavigateTo("category/" + category.Id))">
+                
+                <h5 class="card-title">@category.Name</h5>
+                <span class="Learn">Learn</span>
+                <span class="Learn oi oi-arrow-right" aria-hidden="true"></span>
+                
+            </button>
+                
+        </div>
+}
+
+@code {
+    [Parameter]
+    public CategoryDetailsDTO category { get; set; }
+
+    [CascadingParameter(Name = "AllCategoriesViewModel")]
+    AllCategoriesViewModel AllCategoriesViewModel { get; set; }
+
+    List<CategoryDetailsDTO> details = new List<CategoryDetailsDTO>();
+}

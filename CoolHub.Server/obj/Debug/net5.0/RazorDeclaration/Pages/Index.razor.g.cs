@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace CoolHub.Server.Pages
+namespace CoolHub
 {
     #line hidden
     using System;
@@ -82,6 +82,34 @@ using CoolHub.Server.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Index.razor"
+using CoolHub.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Index.razor"
+using CoolHub.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Index.razor"
+using System.ComponentModel;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Index.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,6 +118,8 @@ using CoolHub.Server.Shared;
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AllCategoriesViewModel AllCategoriesViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

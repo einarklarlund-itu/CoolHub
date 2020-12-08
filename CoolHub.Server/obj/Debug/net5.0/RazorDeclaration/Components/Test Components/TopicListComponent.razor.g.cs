@@ -113,13 +113,8 @@ using System.ComponentModel;
 #nullable restore
 #line 30 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicListComponent.razor"
        
-    [CascadingParameter(Name = "TopicDTOs")]
-    ICollection<TopicDTO> TopicDTOs { get; set; }
-
-    public void UpdateList()
-    {
-        StateHasChanged();
-    }
+    [CascadingParameter(Name = "CategoryViewModel")]
+    CategoryViewModel CategoryViewModel { get; set; }
 
 #line default
 #line hidden

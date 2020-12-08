@@ -91,14 +91,14 @@ using CoolHub.ViewModels;
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Resource.razor"
-using System.ComponentModel;
+using CoolHub.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Resource.razor"
-using Microsoft.Extensions.Configuration;
+using System.ComponentModel;
 
 #line default
 #line hidden
@@ -112,17 +112,21 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Resource.razor"
+#line 35 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Resource.razor"
  
+    
+    private ResourceDetailsDTO resource;
+
     // update the entire view, the page and its components on PropertyChanged
     protected override async Task OnInitializedAsync()
     {
-        ResourcesViewModel.PropertyChanged += async (sender, e) => { 
+        ResourceViewModel.PropertyChanged += async (sender, e) => { 
             await InvokeAsync(() =>
             {
                 StateHasChanged();
             });
         };
+        
         await base.OnInitializedAsync();
     }
 
@@ -136,14 +140,13 @@ using Microsoft.Extensions.Configuration;
 
     public void Dispose()
     {
-        ResourcesViewModel.PropertyChanged -= OnPropertyChangedHandler;
+        ResourceViewModel.PropertyChanged -= OnPropertyChangedHandler;
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ResourcesViewModel ResourcesViewModel { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ResourceViewModel ResourceViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

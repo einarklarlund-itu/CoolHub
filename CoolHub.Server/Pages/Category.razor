@@ -4,10 +4,8 @@
 @using CoolHub.ViewModels
 @using CoolHub.Models
 @using System.ComponentModel
-@using Microsoft.Extensions.Configuration
 
 @inject CategoryViewModel CategoryViewModel
-@inject IConfiguration Configuration
 
 @if (category == null)
 {
@@ -39,12 +37,9 @@ else
         </tbody>
     </table> *@
     
-    <CascadingValue Value=@TopicDTOs Name="TopicDTOs">
-        <TopicListComponent  @ref="topicListComponent"> </TopicListComponent>
-    </CascadingValue>
-
-    <CascadingValue Value=@NewTopic Name="NewTopic">
-        <TopicFormComponent OnCategoryFormSubmitted="CategoryFormSubmittedHandler"> </TopicFormComponent>
+    <CascadingValue Value=@CategoryViewModel Name="CategoryViewModel">
+        <TopicListComponent> </TopicListComponent>
+        <TopicFormComponent> </TopicFormComponent>
     </CascadingValue>
 }
 
@@ -52,20 +47,18 @@ else
     [Parameter]
     public string categoryIdString { get; set; }
 
-    public ICollection<TopicDTO> TopicDTOs => category.Topics.ToList();
-
     public TopicCreateDTO NewTopic { get; set; }
 
     private int categoryId;
 
     private CategoryDetailsDTO category;
 
-    private TopicListComponent topicListComponent;
-
     protected override void OnInitialized()
     {
         if(Int32.TryParse(categoryIdString, out categoryId))
         {
+            // gotta set this id or else the view model doesnt know what to read
+            CategoryViewModel.CategoryId = categoryId;
             category = CategoryViewModel.GetCategoryById(categoryId);
         }
         else
@@ -76,26 +69,28 @@ else
         NewTopic = new TopicCreateDTO();
     }
 
-    private void CategoryFormSubmittedHandler()
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
     {
-        NewTopic.CategoryId = categoryId;
-
-        CategoryViewModel.CreateTopic(NewTopic);
-        
-        NewTopic = new TopicCreateDTO();
-
-        topicListComponent.UpdateList();
+        CategoryViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
     }
 
-    private string ResourceDTOsToString(ICollection<ResourceDTO> resourceDTOs)
+    private async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
     {
-        string str = "";
-        
-        foreach(var resourceDTO in resourceDTOs)
+        await InvokeAsync(() =>
         {
-            str += resourceDTO.Name + ", ";
-        }
+            StateHasChanged();
+        });
+    }
 
-        return str.Length > 2 ? str.Substring(0, str.Length - 2) : "";
+    public void Dispose()
+    {
+        CategoryViewModel.PropertyChanged -= OnPropertyChangedHandler;
     }
 }

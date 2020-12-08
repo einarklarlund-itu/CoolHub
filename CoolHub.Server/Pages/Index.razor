@@ -1,4 +1,28 @@
 @page "/"
 
-<h1> hello! </h1>
-<br><br><br><br><br><br><br><br><br><br><br>
+@namespace CoolHub
+
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using System.ComponentModel
+@using Microsoft.Extensions.Configuration
+
+@inject AllCategoriesViewModel AllCategoriesViewModel 
+@* change the ViewModel *@
+@inject IConfiguration Configuration
+
+<h1> <b>Learn to code!</b> </h1>
+<br>
+<h4>Learn to code with our beginner-friendly tutorials<br>
+ and examples. Read tutorials, try examples, write programs,<br>
+  and learn to code.</h4>
+<br><br>
+
+<h4><b>Choose a course</b></h4>
+<CascadingValue Value=@AllCategoriesViewModel Name="AllCategoriesViewModel">
+    <CategoryListComponent />
+</CascadingValue>
+
+@code {
+        
+}

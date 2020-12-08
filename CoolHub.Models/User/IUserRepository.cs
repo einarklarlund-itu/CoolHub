@@ -7,9 +7,9 @@ namespace CoolHub.Models
     {
         int NumberOfUsers();
         (Status response, int userId) Create(UserCreateDTO user);
-        Task<(Status response, int userId)> CreateAsync(UserCreateDTO user);
-        Task<UserDetailsDTO> Read(int userId);
-        Task<Status> Update(UserUpdateDTO user);
-        Task<Status> Delete(int userId, bool force = false);
+        UserDetailsDTO Read(int userId);
+        UserDetailsDTO Read(string username);
+        Status Update(UserUpdateDTO user);
+        Status Delete(int userId, bool force = false);
     }
 }

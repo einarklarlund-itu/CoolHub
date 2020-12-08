@@ -22,28 +22,6 @@ namespace CoolHub.Models
             // Task.Run()
             return _context.Resources.Count();
         }
-
-        public async Task<(Status response, int resourceId)> CreateAsync(ResourceCreateDTO resource)
-        {
-            var resourceExists = await _context.Resources.AnyAsync(c => c.Name == resource.Name);
-
-            if (resourceExists)
-            {
-                return (Conflict, 0);
-            }
-
-            var entity = new Resource
-            {
-                Name = resource.Name,
-                Description = resource.Description,
-                Url = resource.Url
-            };
-
-            _context.Resources.Add(entity);
-            await _context.SaveChangesAsync();
-
-            return (Created, entity.Id);
-        }
         
         public (Status response, int resourceId) Create(ResourceCreateDTO resource)
         {
@@ -54,10 +32,12 @@ namespace CoolHub.Models
                 return (Conflict, 0);
             }
 
-            var entity = new Resource
+            var entity = new Resource()
             {
                 Name = resource.Name,
-                Description = resource.Description
+                Description = resource.Description,
+                Topic = _context.Topics.Find(resource.TopicId),
+                Url = resource.Url
             };
 
             _context.Resources.Add(entity);
@@ -69,7 +49,7 @@ namespace CoolHub.Models
         public IQueryable<ResourceDetailsDTO> Read()
         {
             return from r in _context.Resources
-                select new ResourceDetailsDTO
+                select new ResourceDetailsDTO()
                 {
                     Name = r.Name,
                     Description = r.Description,
@@ -84,30 +64,11 @@ namespace CoolHub.Models
                 };
         }
 
-        public async Task<IQueryable<ResourceDetailsDTO>> ReadAsync()
-        {
-            return await Task.Run(() => 
-                from c in _context.Resources
-                select new ResourceDetailsDTO
-                {
-                    Name = c.Name,
-                    Description = c.Description,
-                    Comments = c.Comments.Select(c => new CommentDTO()
-                    {
-                        Text = c.Text,
-                        User = new UserDTO()
-                        {
-                            Name = c.User.Name
-                        }
-                    }).ToList()
-                });
-        }
-
-        public async Task<ResourceDetailsDTO> Read(int tagId)
+        public ResourceDetailsDTO Read(int resourceId)
         {
             var tags = from c in _context.Resources
-                       where c.Id == tagId
-                       select new ResourceDetailsDTO
+                       where c.Id == resourceId
+                       select new ResourceDetailsDTO()
                        {
                            Name = c.Name,
                            Description = c.Description,
@@ -121,20 +82,20 @@ namespace CoolHub.Models
                            }).ToList()
                        };
 
-            return await tags.FirstOrDefaultAsync();
+            return tags.FirstOrDefault();
         }
 
-        public async Task<Status> Update(ResourceUpdateDTO resource)
+        public Status Update(ResourceUpdateDTO resource)
         {
-            var resourceExists = await _context.Resources
-                .AnyAsync(t => t.Id != resource.Id && t.Name == resource.Name);
+            var resourceExists = _context.Resources
+                .Any(t => t.Id != resource.Id && t.Name == resource.Name);
 
             if (!resourceExists)
             {
                 return Conflict;
             }
 
-            var entity = await _context.Resources.FindAsync(resource.Id);
+            var entity = _context.Resources.Find(resource.Id);
 
             if (entity == null)
             {
@@ -148,16 +109,16 @@ namespace CoolHub.Models
                     c1.Id == c2.Id))
                 .ToList();
 
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             return Updated;
         }
 
-        public async Task<Status> Delete(int resourceId, bool force = false)
+        public Status Delete(int resourceId, bool force = false)
         {
-            var entity = await _context.Resources
+            var entity = _context.Resources
                 .Include(c => c.Comments)
-                .FirstOrDefaultAsync(c => c.Id == resourceId);
+                .FirstOrDefault(c => c.Id == resourceId);
 
             if (entity == null)
             {
@@ -171,7 +132,7 @@ namespace CoolHub.Models
 
             _context.Resources.Remove(entity);
 
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             return Deleted;
         }

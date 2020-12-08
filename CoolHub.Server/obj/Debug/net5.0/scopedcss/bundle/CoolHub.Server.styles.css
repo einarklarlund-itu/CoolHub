@@ -37,7 +37,7 @@
 }
 
 .bodyin[b-mhgvi2dvzx] {
-    padding: 30px;
+    padding: 3rem;
     background: white;
     margin: 3rem;
     border-radius: 5px;
@@ -87,12 +87,12 @@
     }
 
     .sidebar[b-mhgvi2dvzx] {
-        position: sticky;
+        /* position: sticky; */
         top: 0;
     }
 
     .top-row[b-mhgvi2dvzx] {
-        position: sticky;
+        /* position: sticky; */
         top: 0;
         z-index: 1;
     }

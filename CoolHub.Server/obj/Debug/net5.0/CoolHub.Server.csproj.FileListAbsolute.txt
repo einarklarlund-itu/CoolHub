@@ -371,3 +371,19 @@ C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\R
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\TopicListComponent.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\TopicFormComponent.razor.g.cs
 C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\TopicListComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\Topic.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\ResourceFormComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\ResourceListComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\ResourceFormComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\ResourceListComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\Topic.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\About.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\About.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Pages\LogIn.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Pages\LogIn.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\CategoryComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\CategoryComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\LoginComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\LoginComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\RazorDeclaration\Components\Test Components\SignUpComponent.razor.g.cs
+C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\obj\Debug\net5.0\Razor\Components\Test Components\SignUpComponent.razor.g.cs

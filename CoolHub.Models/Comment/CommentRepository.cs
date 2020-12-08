@@ -27,11 +27,10 @@ namespace CoolHub.Models
         public (Status response, int CommentId) Create(CommentCreateDTO comment)
         {
             Debug.WriteLine("Create called in CommentRepository");
-            var user = _context.Users.Where(u => u.Name == comment.User.Name).FirstOrDefault();
 
-            var entity = new Comment
+            var entity = new Comment()
             {
-                User = user,
+                User = _context.Users.Find(comment.UserId),
                 Text = comment.Text
             };
 
@@ -41,108 +40,66 @@ namespace CoolHub.Models
             return (Created, entity.Id);
         }
 
-        public async Task<(Status response, int CommentId)> CreateAsync(CommentCreateDTO comment) // TODO: CommentCreateDTO take UserDTO??
-        {
-            Debug.WriteLine("Create called in CommentRepository");
-
-            var entity = new Comment
-            {
-                User = new User
-            {
-                Name = comment.User.Name,
-                Email = comment.User.Name + "@hotmail.dk"
-            },
-                Text = comment.Text
-            };
-
-            _context.Comments.Add(entity);
-            await _context.SaveChangesAsync();
-            Debug.WriteLine("_context.SaveChangesAsync returned in CommentRepository");
-            return await Task.Run(() => (Created, entity.Id));
-        }
-
         public IQueryable<CommentDetailsDTO> Read(ResourceDetailsDTO resource)
         {
-            return null;
-            // return from c in _context.Comments where c.ResourceId = resource.id
-            //     select new CommentDetailsDTO
-            //     {
-            //         User = c.User,
-            //         Text = c.Text,
-            //     };
-        }
-
-        public async Task<IQueryable<CommentDetailsDTO>> ReadAsync(ResourceDetailsDTO resource)
-        {
-            return null;
-            // return await Task.Run(() =>  from c in _context.Comments where c.ResourceId = resource.id
-            //     select new CommentDetailsDTO
-            //     {
-            //         User = c.User,
-            //         Text = c.Text,
-            //     });
+            return from c in _context.Comments where c.ResourceId == resource.id
+                select new CommentDetailsDTO()
+                {
+                    User = new UserDTO() {
+                        Name = c.User.Name
+                    },
+                    Text = c.Text,
+                };
         }
         
         public IQueryable<CommentDetailsDTO> Read(UserDTO user)
         {
-           return null;
-            // return from c in _context.Comments where c.User.Id = 1 // TODO: maybe username? DTO does not include ID
-            //     select new CommentDetailsDTO
-            //     {
-            //         User = c.User,
-            //         Text = c.Text,
-            //     };
+            return from c in _context.Comments where c.User.Name == user.Name // TODO: maybe username? DTO does not include ID
+                select new CommentDetailsDTO()
+                {
+                    User = new UserDTO() {
+                        Name = c.User.Name
+                    },
+                    Text = c.Text,
+                };
         }
 
-        public async Task<IQueryable<CommentDetailsDTO>> ReadAsync(UserDTO user)
+        public Status Update(CommentUpdateDTO comment)
         {
-            return null;
-            // return await Task.Run(() => from c in _context.Comments where c.User.Id = -1 // TODO: maybe username? DTO does not include ID
-            //     select new CommentDetailsDTO
-            //     {
-            //         User = c.User,
-            //         Text = c.Text,
-            //     });
-        }
+            var commentExist = _context.Comments.Any(c => c.Id == comment.Id);
+            if (!commentExist)
+            {
+                return  Conflict;
+            }
 
-        public Task<Status> Update(CommentUpdateDTO comment)
-        {
-            return null;
-            // var commentExist = _context.Comments.Any(c => c.Id == comment.Id);
-            // if (!commentExist)
-            // {
-            //     return  Task.Run(() => Conflict);
-            // }
+            var commentEntity = _context.Comments.FirstOrDefault(c => c.Id == comment.Id);
+            if (commentEntity == null)
+            {
+                return NotFound;
+            }
 
-            // var commentEntity = _context.Comments.Any(c => c.Id == comment.Id);
-            // if (commentEntity == null)
-            // {
-            //     return Task.Run(() => NotFound);
-            // }
+            commentEntity.Text = comment.Text;
 
-            // commentEntity.Text = comment.Text;
-
-            // await _context.SaveChangesAsync();
-            // return  Task.Run(() => Updated);
+            _context.SaveChanges();
+            return Updated;
         }
         
-        public Task<Status> Delete(int commentId, bool force = false)
+        public Status Delete(int commentId, bool force = false)
         {
-            return null;
-            // var entity = _context.Comments.FirstOrDefaultAsync(c => c.Id);
-            // if (entity == null)
-            // {
-            //     return  Task.Run(() => Conflict);
-            // }
+            var entity = _context.Comments.FirstOrDefault(c => c.Id == commentId);
+            if (entity == null)
+            {
+                return Conflict;
+            }
 
-            // if (!force && entity.User) // TODO: figure out force for comments. Delete from User? Auto?
-            // {
-            //         return  Task.Run(() => Conflict);
-            // }
+            if (!force) // TODO: figure out force for comments. Delete from User? Auto?
+            {
+                    return  Conflict;
+            }
 
-            // _context.Comments.Remove(entity);
-            // await _context.SaveChangesAsync();
-            // return  Task.Run(() => Deleted);
+            _context.Comments.Remove(entity);
+            _context.SaveChanges();
+            return  Deleted;
         }
     }
 }   

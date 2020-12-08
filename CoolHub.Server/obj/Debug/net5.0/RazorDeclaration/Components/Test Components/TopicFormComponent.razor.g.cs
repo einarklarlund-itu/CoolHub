@@ -120,29 +120,16 @@ using System.Diagnostics;
 #nullable restore
 #line 29 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\TopicFormComponent.razor"
        
-    [Parameter]
-    public EventCallback OnCategoryFormSubmitted { get; set; }
-    
-    [CascadingParameter(Name = "NewTopic")]
-    private TopicCreateDTO NewTopic { get; set; }
+    [CascadingParameter(Name = "CategoryViewModel")]
+    CategoryViewModel CategoryViewModel { get; set; }
 
-    private void CreateCategory()
+    private TopicCreateDTO Topic = new TopicCreateDTO();
+
+    private void CreateTopic()
     {
-        /*NewTopic = new TopicCreateDTO()
-        {
-            Name = NewTopic.Name,
-            Description = NewTopic.Description
-        };*/
-        
-        OnCategoryFormSubmitted.InvokeAsync();
+        CategoryViewModel.CreateTopic(Topic);
 
-        /*AllCategoriesViewModel.CreateCategory(new CategoryCreateDTO()
-        {
-            Name = Category.Name,
-            Description = Category.Description
-        });
-
-        Category = new CategoryCreateDTO(); */ 
+        Topic = new TopicCreateDTO();
     }
 
 #line default

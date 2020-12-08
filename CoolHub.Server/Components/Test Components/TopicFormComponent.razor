@@ -7,18 +7,18 @@
 
 <hr />
 
-<EditForm Model="@NewTopic" OnValidSubmit="@CreateCategory">
+<EditForm Model="@Topic" OnValidSubmit="@CreateTopic">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="col-4">
         <div class="form-group">
             <label for="name">Name</label>
-            <InputText class="form-control" id="name" @bind-Value=@NewTopic.Name />
+            <InputText class="form-control" id="name" @bind-Value=@Topic.Name />
         </div>
         <div class="form-group">
             <label for="notes">Description</label>
-            <InputTextArea class="form-control" id="notes" @bind-Value=@NewTopic.Description />
+            <InputTextArea class="form-control" id="notes" @bind-Value=@Topic.Description />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </div>
@@ -27,28 +27,15 @@
 
 
 @code {
-    [Parameter]
-    public EventCallback OnCategoryFormSubmitted { get; set; }
-    
-    [CascadingParameter(Name = "NewTopic")]
-    private TopicCreateDTO NewTopic { get; set; }
+    [CascadingParameter(Name = "CategoryViewModel")]
+    CategoryViewModel CategoryViewModel { get; set; }
 
-    private void CreateCategory()
+    private TopicCreateDTO Topic = new TopicCreateDTO();
+
+    private void CreateTopic()
     {
-        /*NewTopic = new TopicCreateDTO()
-        {
-            Name = NewTopic.Name,
-            Description = NewTopic.Description
-        };*/
-        
-        OnCategoryFormSubmitted.InvokeAsync();
+        CategoryViewModel.CreateTopic(Topic);
 
-        /*AllCategoriesViewModel.CreateCategory(new CategoryCreateDTO()
-        {
-            Name = Category.Name,
-            Description = Category.Description
-        });
-
-        Category = new CategoryCreateDTO(); */ 
+        Topic = new TopicCreateDTO();
     }
 }

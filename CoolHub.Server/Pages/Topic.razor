@@ -1,0 +1,92 @@
+@page "/topic/{topicIdString}"
+@namespace CoolHub
+
+@using CoolHub.ViewModels
+@using CoolHub.Models
+@using System.ComponentModel
+
+@inject TopicViewModel TopicViewModel
+
+@if (topic == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h1>@topic.Name</h1>
+
+    <p>@topic.Description</p>
+
+    @* <table class="table">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Description</th>
+                <th>Resources</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var topic in topic.Topics)
+            {
+                <tr>
+                    <td>@topic.Name</td>
+                    <td>@topic.Description</td>
+                    <td>@ResourceDTOsToString(topic.Resources)</td>
+                </tr>
+            }
+        </tbody>
+    </table> *@
+    
+    <CascadingValue Value=@TopicViewModel Name="TopicViewModel">
+        <ResourceListComponent />
+        <ResourceFormComponent />
+    </CascadingValue>
+}
+
+@code {
+    [Parameter]
+    public string topicIdString { get; set; }
+
+    private int topicId;
+
+    private TopicDetailsDTO topic;
+
+    protected override void OnInitialized()
+    {
+        if(Int32.TryParse(topicIdString, out topicId))
+        {
+            // gotta set this id or else the view model doesnt know what to read
+            TopicViewModel.TopicId = topicId;
+            topic = TopicViewModel.GetTopicById(topicId);
+        }
+        else
+        {
+            // some error handling behavior?
+        }
+    }
+
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
+    {
+        TopicViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
+    }
+
+    private async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        TopicViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
+}

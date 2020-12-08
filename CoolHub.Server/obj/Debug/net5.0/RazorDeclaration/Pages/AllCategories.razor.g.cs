@@ -103,13 +103,6 @@ using System.ComponentModel;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 8 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
-using Microsoft.Extensions.Configuration;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/all-categories")]
     public partial class AllCategories : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
@@ -119,7 +112,7 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
+#line 28 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\AllCategories.razor"
  
     // update the entire view, the page and its components on PropertyChanged
     protected override async Task OnInitializedAsync()
@@ -149,7 +142,6 @@ using Microsoft.Extensions.Configuration;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AllCategoriesViewModel AllCategoriesViewModel { get; set; }
     }
 }

@@ -9,20 +9,18 @@ using System.Diagnostics;
 
 namespace CoolHub.ViewModels
 {
-    public class ResourcesViewModel : BaseViewModel
+    public class ResourceViewModel : BaseViewModel
     {
         private readonly IResourceRepository _repository;
         public List<ResourceDetailsDTO> CurrentResource;
 
-        public ResourcesViewModel(IResourceRepository repository)
+        public ResourceViewModel(IResourceRepository repository)
         {
             _repository = repository;
         }
 
         public Status CreateResource(ResourceCreateDTO resource)
         {
-            Debug.WriteLine("CreateResource called in ResourcesViewModel");
-
             IsBusy = true;
 
             (Status status, int categoryId) response = _repository.Create(resource);
@@ -34,7 +32,7 @@ namespace CoolHub.ViewModels
             return response.status;
         }
         
-        public Status AddComment(User user, string comment)
+        public Status CreateComment(User user, string comment)
         {
             return Status.Conflict;
         }

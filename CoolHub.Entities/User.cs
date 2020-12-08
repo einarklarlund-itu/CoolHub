@@ -16,5 +16,7 @@ namespace CoolHub.Entities
         public string Email { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public string Password { get; set; }
     }
 }

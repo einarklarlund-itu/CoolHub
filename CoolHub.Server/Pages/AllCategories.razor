@@ -5,22 +5,24 @@
 @using CoolHub.ViewModels
 @using CoolHub.Models
 @using System.ComponentModel
-@using Microsoft.Extensions.Configuration
 
 @inject AllCategoriesViewModel AllCategoriesViewModel
-@inject IConfiguration Configuration
 @implements IDisposable
 
 @* Add the viewmodel as a cascading value, so that all the children of the 
 ToDoPage component have a reference to the viewmodel*@
 
-<h1>Number of categories: @AllCategoriesViewModel.NumberOfCategories()</h1>
+<div class="Tutorials-pagecontent">
+    <h1 class="Tutorials-header">Choose what to learn</h1>
+    <br>
+    @* <h1>Number of categories: @AllCategoriesViewModel.NumberOfCategories()</h1> *@
 
-<CascadingValue Value=@AllCategoriesViewModel Name="AllCategoriesViewModel">
-    <CategoryListComponent />
-    <CategoryFormComponent />
-</CascadingValue>
+    <CascadingValue Value=@AllCategoriesViewModel Name="AllCategoriesViewModel">
+        <CategoryListComponent />
+        <CategoryFormComponent />
+    </CascadingValue>
 
+</div>
 
 @code 
 {

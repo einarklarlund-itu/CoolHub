@@ -9,41 +9,37 @@ using System.Diagnostics;
 
 namespace CoolHub.ViewModels
 {
-    public class AllCategoriesViewModel : BaseViewModel
+    public class CategoryViewModel : BaseViewModel
     {
-        private readonly ICategoryRepository _repository;
-        public List<CategoryDetailsDTO> Categories =>
-            _repository.Read().ToList();
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly ITopicRepository _topicRepository;
+        
+        public int CategoryId { get; set; }
 
-        public AllCategoriesViewModel(ICategoryRepository repository)
-        {
-            _repository = repository;
-        }
+        public List<CategoryDetailsDTO> Categories =>_categoryRepository.Read().ToList();
+        public ICollection<TopicDTO> TopicDTOs => _categoryRepository.Read(CategoryId).Topics;
 
-        public int NumberOfCategories()
+        public CategoryViewModel(ICategoryRepository categoryRepository, ITopicRepository topicRepository)
         {
-            return _repository.NumberOfCategories();
+            _categoryRepository = categoryRepository;
+            _topicRepository = topicRepository;
         }
 
         public CategoryDetailsDTO GetCategoryById(int id)
         {
-            return _repository.Read(id);
+            return _categoryRepository.Read(id);
         }
 
-        public ICollection<CategoryDetailsDTO> GetAllCategories()
+        public Status CreateTopic(TopicCreateDTO topic)
         {
-            return _repository.Read().ToList();
-        }
-
-        public Status CreateCategory(CategoryCreateDTO category)
-        {
-            Debug.WriteLine("CreateCategory called in AllCategoriesViewModel");
-
             IsBusy = true;
 
-            (Status status, int categoryId) response = _repository.Create(category);
+            topic.CategoryId = CategoryId;
 
-            OnPropertyChanged(nameof(_repository));
+            (Status status, int topicId) response = _topicRepository.Create(topic);
+
+            OnPropertyChanged(nameof(_topicRepository));
+            OnPropertyChanged(nameof(_categoryRepository));
 
             IsBusy = false;
 

@@ -105,10 +105,12 @@ namespace CoolHub.Models
                            Description = c.Description,
                            Topics = c.Topics.Select(t => new TopicDTO()
                            {
+                               Id = t.Id,
                                Name = t.Name,
                                Description = t.Description,
                                Resources = t.Resources.Select(r => new ResourceDTO()
                                {
+                                   Id = r.Id,
                                    Name = r.Name,
                                    Description = r.Description
                                }).ToList()

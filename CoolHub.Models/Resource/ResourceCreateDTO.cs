@@ -5,6 +5,6 @@ namespace CoolHub.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
-        public TopicDTO topic{ get; set; }
+        public int TopicId { get; set; }
     }
 }

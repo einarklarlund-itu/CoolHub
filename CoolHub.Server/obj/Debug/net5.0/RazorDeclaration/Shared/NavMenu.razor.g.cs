@@ -90,7 +90,7 @@ using CoolHub.Server.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Shared\NavMenu.razor"
+#line 33 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

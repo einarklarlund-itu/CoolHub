@@ -118,7 +118,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 29 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryFormComponent.razor"
+#line 32 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryFormComponent.razor"
        
     [CascadingParameter(Name = "AllCategoriesViewModel")]
     AllCategoriesViewModel AllCategoriesViewModel { get; set; }

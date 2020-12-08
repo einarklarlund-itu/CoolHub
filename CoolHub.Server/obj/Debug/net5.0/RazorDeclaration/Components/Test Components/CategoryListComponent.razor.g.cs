@@ -111,7 +111,7 @@ using System.ComponentModel;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
+#line 23 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Components\Test Components\CategoryListComponent.razor"
        
     [CascadingParameter(Name = "AllCategoriesViewModel")]
     AllCategoriesViewModel AllCategoriesViewModel { get; set; }

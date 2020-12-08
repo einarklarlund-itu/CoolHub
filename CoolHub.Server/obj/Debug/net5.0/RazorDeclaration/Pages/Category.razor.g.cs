@@ -103,13 +103,6 @@ using System.ComponentModel;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 7 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
-using Microsoft.Extensions.Configuration;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/category/{categoryIdString}")]
     public partial class Category : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,12 +112,10 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 51 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
+#line 46 "C:\Users\Einar\Documents\Projects\BDSA\CoolHub\CoolHub.Server\Pages\Category.razor"
        
     [Parameter]
     public string categoryIdString { get; set; }
-
-    public ICollection<TopicDTO> TopicDTOs => category.Topics.ToList();
 
     public TopicCreateDTO NewTopic { get; set; }
 
@@ -132,12 +123,12 @@ using Microsoft.Extensions.Configuration;
 
     private CategoryDetailsDTO category;
 
-    private TopicListComponent topicListComponent;
-
     protected override void OnInitialized()
     {
         if(Int32.TryParse(categoryIdString, out categoryId))
         {
+            // gotta set this id or else the view model doesnt know what to read
+            CategoryViewModel.CategoryId = categoryId;
             category = CategoryViewModel.GetCategoryById(categoryId);
         }
         else
@@ -148,33 +139,34 @@ using Microsoft.Extensions.Configuration;
         NewTopic = new TopicCreateDTO();
     }
 
-    private void CategoryFormSubmittedHandler()
+    // update the entire view, the page and its components on PropertyChanged
+    protected override async Task OnInitializedAsync()
     {
-        NewTopic.CategoryId = categoryId;
-
-        CategoryViewModel.CreateTopic(NewTopic);
-        
-        NewTopic = new TopicCreateDTO();
-
-        topicListComponent.UpdateList();
+        CategoryViewModel.PropertyChanged += async (sender, e) => { 
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
     }
 
-    private string ResourceDTOsToString(ICollection<ResourceDTO> resourceDTOs)
+    private async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
     {
-        string str = "";
-        
-        foreach(var resourceDTO in resourceDTOs)
+        await InvokeAsync(() =>
         {
-            str += resourceDTO.Name + ", ";
-        }
+            StateHasChanged();
+        });
+    }
 
-        return str.Length > 2 ? str.Substring(0, str.Length - 2) : "";
+    public void Dispose()
+    {
+        CategoryViewModel.PropertyChanged -= OnPropertyChangedHandler;
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private CategoryViewModel CategoryViewModel { get; set; }
     }
 }

@@ -37,11 +37,17 @@ namespace CoolHub.Server
             services.AddScoped<IToDoViewModel, ToDoFinalViewModel>();
             services.AddScoped<AllCategoriesViewModel>();
             services.AddScoped<CategoryViewModel>();
+            services.AddScoped<TopicViewModel>();
+            services.AddScoped<ResourceViewModel>();
+            services.AddScoped<LogInViewModel>();
             
             // services.AddScoped<IAllCategoriesViewModel, AllCategoriesViewModel>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ITopicRepository, TopicRepository>();
+            services.AddScoped<IResourceRepository, ResourceRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
             
             services.AddScoped<ICoolHubContext, CoolHubContext>();
             // services.AddDbContext<CoolHubContext>(options => 

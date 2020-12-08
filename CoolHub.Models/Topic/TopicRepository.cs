@@ -44,7 +44,7 @@ namespace CoolHub.Models {
         public IQueryable<TopicDetailsDTO> Read()
         {
             return from t in _context.Topics
-                select new TopicDetailsDTO
+                select new TopicDetailsDTO()
                 {
                     Name = t.Name,
                     Description = t.Description
@@ -58,23 +58,37 @@ namespace CoolHub.Models {
 
         public TopicDetailsDTO Read(string topicName)
         {
-            return _context.Topics.Select(t => new TopicDetailsDTO()
+            return _context.Topics.Where(t => t.Name == topicName)
+                .Select(t => new TopicDetailsDTO()
                 {
                     Name = t.Name,
                     Description = t.Description,
                     Resources = t.Resources.Select(r => new ResourceDTO()
                     {
+                        Id = r.Id,
                         Name = r.Name,
                         Description = r.Description 
                     }).ToList()
-                }).Where(t => t.Name == topicName)
+                })
                 .FirstOrDefault();
         }
 
         
-        public Task<TopicDetailsDTO> Read(int id)
+        public TopicDetailsDTO Read(int id)
         {
-            return null;
+            return _context.Topics.Where(t => t.Id == id)
+                .Select(t => new TopicDetailsDTO()
+                {
+                    Name = t.Name,
+                    Description = t.Description,
+                    Resources = t.Resources.Select(r => new ResourceDTO()
+                    {
+                        Id = r.Id,
+                        Name = r.Name,
+                        Description = r.Description 
+                    }).ToList()
+                })
+                .FirstOrDefault();
         }
 
         public Status Update(TopicUpdateDTO topic)

@@ -20,7 +20,6 @@ namespace CoolHub.ViewModels
     
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-    
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         protected void SetValue<T>(ref T backingFiled, T value, [CallerMemberName] string propertyName = null)

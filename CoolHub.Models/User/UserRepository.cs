@@ -12,96 +12,117 @@ namespace CoolHub.Models
     {
         private readonly ICoolHubContext _context;
 
+        public UserRepository(ICoolHubContext context)
+        {
+            _context = context;
+        }
+
         public int NumberOfUsers()
         {
             return _context.Users.Count();
         }
 
         public (Status response, int userId) Create(UserCreateDTO user){
+            var userExist = _context.Users.Any(u => u.Email == user.Email);
+            if (userExist)
+            {
+                return (Conflict, 0);
+            }
 
-            return (Conflict, -1);
+            var entity = new User()
+            {
+                Name = user.Name,
+                Email = user.Email,
+                Password = user.Password
+            };
+            _context.Users.Add(entity);
+            _context.SaveChanges();
 
-            // var userExist = _context.Users.Any(u => u.Email == user.Email);
-            // if (userExist)
-            // {
-            //     return (Conflict, 0);
-            // }
-
-            // var entity = new User
-            // {
-            //     Name = user.Name,
-            //     Email = user.Email
-            // };
-            // _context.Users.Add(entity);
-            // _context.SaveChanges();
-
-            // return (Created, entity.Id);
+            return (Created, entity.Id);
             
         }
-        
-        public Task<(Status response, int userId)> CreateAsync(UserCreateDTO user)
-        {
-            return Task.Run(() => (Conflict, -1));   
-        }
 
-        public Task<UserDetailsDTO> Read(int userId)
+        public UserDetailsDTO Read(int userId)
         {
             
-            // var user = from u in _context.Users
-            //            where u.Id == userId
-            //            select new UserDetailsDTO
-            //            {
-            //                Name = u.Name,
-            //                Email = u.Email,
-            //                Comments = null
-            //            };
-            // return Task.Run(() => user);
-            return null;
+            var user = from u in _context.Users
+                       where u.Id == userId
+                       select new UserDetailsDTO()
+                       {
+                           Name = u.Name,
+                           Email = u.Email,
+                           Password = u.Password,
+                           Comments = u.Comments.Select(c => new CommentDTO() {
+                               Id = c.Id,
+                               User = new UserDTO() {
+                                   Name = c.User.Name,
+                               },
+                               Text = c.Text
+                           }).ToList()
+                       };
+            return user.FirstOrDefault();
+        }
+
+        public UserDetailsDTO Read(string userName)
+        {
+            
+            var user = from u in _context.Users
+                       where u.Name == userName
+                       select new UserDetailsDTO()
+                       {
+                           Name = u.Name,
+                           Email = u.Email,
+                           Password = u.Password,
+                           Comments = u.Comments.Select(c => new CommentDTO() {
+                               Id = c.Id,
+                               User = new UserDTO() {
+                                   Name = c.User.Name,
+                               },
+                               Text = c.Text
+                           }).ToList()
+                       };
+            return user.FirstOrDefault();
         }
             
-        public async Task<Status> Update(UserUpdateDTO user) // TODO: why task and asyyyync?
+        public Status Update(UserUpdateDTO user)
         {
-            // var userExist = _context.Users.Any(u => u.Email == user.Email);
-            // if (!userExist)
-            // {
-            //     return Task.Run(() => Conflict);
-            // }
+            var userExist = _context.Users.Any(u => u.Email == user.Email);
+            if (!userExist)
+            {
+                return Conflict;
+            }
 
-            // var entity = _context.Users.Any(u => u.Email == user.Email); // TODO: this is boolean?
-            // if (entity == null)
-            // {
-            //     return Task.Run(() => NotFound);
-            // }
+            var entity = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (entity == null)
+            {
+                return NotFound;
+            }
 
-            // // TODO: entity is boolean - this is fuckeddd
+            entity.Name = user.Name;
+            entity.Email = user.Email;
+            entity.Comments = _context.Comments
+            .Where(c => user.Comments.Any(q => q.Id == c.Id)).ToList();
 
-            // // entity.Name = user.Name;
-            // // entity.Email = user.Email;
-            // // entity.Comments = _context.Comments
-            // // .Where(c => user.Comments.Any(q => q.Id == c.Id)
-            // // .ToList());
-
-            // await _context.SaveChangesAsync();
-            return await Task.Run(() => Updated);
+            _context.SaveChanges();
+            return Updated;
         }
 
-        public async Task<Status> Delete(int userId, bool force = false)
+        public Status Delete(int userId, bool force = false)
         {
-            // var entity = _context.Users.FirstOrDefaultAsync(u => u.Id); // TODO: why async?
-            // if (entity == null)
-            // {
-            //     return await Task.Run(() =>Conflict);
-            // }
+            var entity = _context.Users.FirstOrDefault(u => u.Id == userId);
+            if (entity == null)
+            {
+                return Conflict;
+            }
 
-            // if (!force && entity.Comments.Any())
-            // {
-            //         return await Task.Run(() =>Conflict);
-            // }
+            if (!force && entity.Comments.Any())
+            {
+                    return Conflict;
+            }
 
-            // _context.Users.Remove(entity);
-            // await _context.SaveChangesAsync(); // TODO: why async?
-            return await Task.Run(() => Deleted);
+            _context.Users.Remove(entity);
+            _context.SaveChanges();
+            return Deleted;
         }
     }
 }
-
